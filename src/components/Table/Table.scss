@@ -1,0 +1,22 @@
+.TableTh {
+    overflow: hidden;
+    color: var(--bw-900-b, #000);
+    text-overflow: ellipsis;
+    font-family: Noto Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+}
+
+.TableTr{
+    display: flex;
+    gap:  20px;
+}
+
+.tableTbody {
+    display: flex;
+    flex-direction: column;
+    gap:  20px;
+
+}

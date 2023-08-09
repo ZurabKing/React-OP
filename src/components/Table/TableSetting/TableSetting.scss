@@ -1,0 +1,28 @@
+.tableSetting-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    .tableSetting-title {
+        overflow: hidden;
+        color: var(--bw-900-b, #000);
+        text-overflow: ellipsis;
+        whitespace: nowrap;
+        font-family: Noto Sans;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%; 
+    }
+
+    .setting-btn{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .setting{
+            border: none;
+            background-color: transparent;
+        }
+    }
+}

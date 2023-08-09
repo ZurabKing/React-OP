@@ -1,0 +1,71 @@
+.navbarContainer {
+    display: flex;
+    width: 252px;
+    padding: 24px 0px 28px 0px;
+    flex-direction: column;
+    gap: 600px;
+}
+
+.sidebarContainer {
+    .sidebarContainer-link {
+        text-decoration: none;
+        display: flex;
+        padding: 12px 24px;
+        align-items: center;
+        gap: 12px;
+        flex: 1 0 0;
+        align-self: stretch;
+        color: var(--neutral-300, #b7b7b7);
+        font-family: Nunito Sans;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 125%;
+
+        &:hover {
+            color: white;
+
+            svg {
+                path {
+                    stroke: white;
+                }
+            }
+        }
+    }
+}
+
+.navbarLogo {
+    display: flex;
+    padding: 0px 32px 44px 24px;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+}
+
+.sidebar-info {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-left: 24px;
+
+    .sidebarInfo-link {
+        text-decoration: none;
+        color: var(--neutral-300, #b7b7b7);
+        font-family: Nunito Sans;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%;
+    }
+
+    .sidebarInfo-span {
+        margin-top: 12px;
+        color: var(--neutral-400, #5c5c5c);
+        font-family: Nunito Sans;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+    }
+}
