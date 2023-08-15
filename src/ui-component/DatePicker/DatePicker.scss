@@ -1,0 +1,47 @@
+.picker__input {
+    display: flex;
+    padding: 12px;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+    color: var(--neutral-400, #5c5c5c);
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    border: none;
+    border-radius: 8px;
+    background: var(--neutral-100, #f9f9f9);
+    cursor: pointer;
+    width: 314px;
+    outline: none;
+}
+
+.calendar-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+.datepicker-container{
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+}
+
+.date-title {
+    color: var(--bw-900-b, #000);
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    margin-bottom: 12px;
+}
+
+.datePiker2{
+    width: 294px;
+}
+

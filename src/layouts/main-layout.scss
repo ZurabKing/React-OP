@@ -1,7 +1,28 @@
-.layout{
+.layout {
     display: flex;
 }
 
-.child-container{
-    background-color: white;
+.child-container {
+    background: var(--bw-900-w, #fff);
+    display: flex;
+    padding: 32px;
+    align-items: flex-start;
+    border-radius: 28px 0 0 0;
+    flex: 1;
+    overflow-y: auto;
+    max-height: calc(100vh - 69px);
+    .child-block {
+        width: 100%;
+        display: flex;
+        padding: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-shrink: 0;
+        border-radius: 12px;
+    }
+}
+
+.header-children {
+    width: 100%;
+    background-color: #000;
 }

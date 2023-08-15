@@ -1,0 +1,11 @@
+.Selected-app-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.datePickers-block {
+    display: flex;
+    gap: 12px;
+    text-overflow: ellipsis;
+}

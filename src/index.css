@@ -5,7 +5,8 @@
 }
 
 body {
-    background: var(--bw-900-b, #000);
+    /* background: var(--bw-900-b, #000); */
+    background: var(--neutral-100, #f9f9f9);
 }
 
 .container {
