@@ -13,7 +13,7 @@ export default function AddFile() {
 
   const handleRemoveImage = () => {
     setSelectedImage(null);
-    setImageURL(""); 
+    setImageURL("");
   };
 
   const handleImageChange = (event) => {
@@ -28,12 +28,10 @@ export default function AddFile() {
   return (
     <div className="App">
       <h3 className="AddFile__title">Общее</h3>
-      <div className="container">
+      <div className="root">
         <div className="img-container">
           {selectedImage && (
-            <div>
-              <img className="img-container" src={imageURL} alt="Selected" />
-            </div>
+            <img className="img-container" src={imageURL} alt="Selected" />
           )}
         </div>
         <div className="Add__btn-block">

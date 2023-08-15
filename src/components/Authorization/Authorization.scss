@@ -1,15 +1,14 @@
 .authorization {
   display: flex;
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
   width: 100%;
   height: 100vh;
 
-  input[type=password]::-ms-reveal,
-  input[type=password]::-ms-clear
-  {
-      display: none;
+  input[type="password"]::-ms-reveal,
+  input[type="password"]::-ms-clear {
+    display: none;
   }
-  
+
   h2 {
     font-weight: 700;
     font-size: 20px;
@@ -21,8 +20,8 @@
     margin-left: auto;
     width: 480px;
     height: 100%;
-    background: #FFFFFF;
-    border: 1px solid #F0F0F0;
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
     padding: 0 80px;
     border-radius: 44px 0px 0px 0px;
     display: flex;
@@ -31,16 +30,17 @@
   }
 
   .authorization_img {
+    width: calc(100% - 480px);
     margin-top: 30px;
     margin-left: 60px;
   }
-  
+
   &-form {
     margin-top: 40px;
 
     label {
       position: relative;
-      
+
       .icon {
         position: absolute;
         top: 50%;
@@ -61,7 +61,7 @@
       }
     }
 
-    input[type=checkbox] {
+    input[type="checkbox"] {
       width: unset;
 
       &:checked {
@@ -78,7 +78,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      
+
       label {
         font-size: 14px;
         line-height: 125%;
@@ -99,30 +99,29 @@
           border-radius: 3px;
           margin-right: 8px;
         }
-        
+
         input {
           position: absolute;
           z-index: -1;
           opacity: 0;
         }
 
-        input:checked+span {
-          background: #2898EC url('../../assets/img/icons/checkmark.png') no-repeat;
+        input:checked + span {
+          background: #2898ec url("../../assets/img/checkmark.png") no-repeat;
           background-position: center;
-          border-color: #2898EC;
+          border-color: #2898ec;
         }
       }
-      
+
       .forgot-password {
-        font-family: 'Nunito Sans';
+        font-family: "Nunito Sans";
         font-size: 14px;
         line-height: 125%;
-        color: #1384D9;
+        color: #1384d9;
         text-decoration: none;
         margin-left: auto;
       }
     }
-
   }
 
   .signIn_gosuslugi {
@@ -134,15 +133,15 @@
     border-radius: 10px;
     max-width: 336px;
     height: 52px;
-    border: 1px solid #F0F0F0;
+    border: 1px solid #f0f0f0;
   }
-  
+
   .privacy-policy {
     position: absolute;
     bottom: 30px;
     font-size: 12px;
     line-height: 100%;
-    color: #5C5C5C;
+    color: #5c5c5c;
     left: 115px;
 
     .site-rules {
@@ -155,16 +154,15 @@
       a {
         font-size: 12px;
         line-height: 100%;
-        color: #5C5C5C;
+        color: #5c5c5c;
         text-decoration: none;
         transition: 0.1s;
 
         &:hover {
-          color: #1384D9;
+          color: #1384d9;
         }
       }
     }
-
   }
 
   .modal {
@@ -174,12 +172,12 @@
     left: 60px;
     top: 150%;
     transition: 0.3s linear;
-    
+
     &-body {
       position: relative;
       padding: 60px;
       width: 880px;
-  
+
       .close {
         font-size: 25px;
         left: 50%;
@@ -188,7 +186,7 @@
         cursor: pointer;
         right: 60px;
         border-radius: 12px;
-  
+
         img {
           position: absolute;
           right: 0;
@@ -217,7 +215,7 @@
           font-size: 16px;
           line-height: 125%;
           margin-bottom: 32px;
-          
+
           h3 {
             margin-top: unset;
             font-weight: 700;

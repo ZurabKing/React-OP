@@ -9,7 +9,7 @@ import { SelectedClass } from "../../ui-component/SelectedClass/SelectedClass";
 import Education from "../Education/Education";
 import "./AddTeacher.scss";
 
-export default function AddTeacher() {
+export function AddTeacher() {
   const [startDate, setStartDate] = React.useState(new Date());
   const [educations, setEducations] = React.useState([true]);
 

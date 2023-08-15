@@ -1,0 +1,65 @@
+.button {
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-family: 'Nunito Sans';
+
+
+  &-color_green {
+    background-color: #2898EC;
+    
+    &:hover {
+      background-color: #1384D9;
+    }
+  
+    &:active {
+      background-color: #000000;
+    }
+  }
+
+  &-color_gray {
+    background-color: #F9F9F9;
+    
+    &:hover {
+      background-color: #5C5C5C;
+    }
+  
+    &:active {
+      background-color: #000000;
+    }
+  }
+
+  &-color_dark {
+    background-color: #F0F0F0;
+    
+    &:hover {
+      background-color: #d1d1d1;
+    }
+  
+    &:active {
+      color: #fff;
+      background-color: #000000;
+    }
+  }
+
+  &-color_black {
+    background-color: #000;
+    
+    &:hover {
+      background-color: #2898EC;
+    }
+  
+    &:active {
+      background-color: #000000;
+    }
+  }
+
+  .access-course {
+    &_lists {
+      display: flex;
+    }
+  }
+}
