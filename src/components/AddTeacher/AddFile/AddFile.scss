@@ -1,52 +1,52 @@
 .Add__btn_span-block {
-    display: flex;
+  display: flex;
 }
-.container {
-    display: flex;
+.root {
+  display: flex;
 }
 
 .AddFile__title {
-    color: #000;
-    font-family: Nunito Sans;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 100%;
-    margin-bottom: 24px;
+  color: #000;
+  font-family: Nunito Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  margin-bottom: 24px;
 }
 
 .img-container {
-    width: 132px;
-    height: 132px;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    border-radius: 8px;
-    background: var(--neutral-150, #f0f0f0);
-    background-image: url("../../../assets/img/camera-off.svg");
-    background-repeat: no-repeat;
-    background-position: center;
+  width: 132px;
+  height: 132px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--neutral-150, #f0f0f0);
+  background-image: url("../../../assets/img/camera-off.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .Add__btn-block {
-    margin-left: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 
-    span {
-        width: 294px;
-        color: var(--neutral-400, #5c5c5c);
-        font-family: Nunito Sans;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 125%;
-    }
+  span {
+    width: 294px;
+    color: var(--neutral-400, #5c5c5c);
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+  }
 }
 
 .Add__btn_container {
-    display: flex;
-    gap: 8px;
-    align-items: center;
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }

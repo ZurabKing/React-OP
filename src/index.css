@@ -1,17 +1,16 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    /* background: var(--bw-900-b, #000); */
-    background: var(--neutral-100, #f9f9f9);
+  /* background: var(--bw-900-b, #000); */
+  background: var(--neutral-100, #f9f9f9);
 }
 
 .container {
-    width: 1260px;
-    margin: 0 auto;
-    margin-right: 0;
+  max-width: 1260px;
+  margin: 0 auto;
+  margin-right: 0;
 }
-

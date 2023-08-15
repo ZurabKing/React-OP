@@ -1,80 +1,88 @@
 .navbarContainer {
-    background-color: black;
-    position: relative;
-    display: flex;
-    width: 252px;
-    height: 100vh;
-    padding: 24px 0px 28px 0px;
-    flex-direction: column;
-    align-items: center;
-    flex-shrink: 0;
+  background-color: black;
+  position: relative;
+  display: flex;
+  width: 252px;
+  height: 100vh;
+  padding: 24px 0px 28px 0px;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .sidebarContainer {
-    .sidebarContainer-link {
-        text-decoration: none;
-        display: flex;
-        padding: 12px 24px;
-        align-items: center;
-        gap: 12px;
-        flex: 1 0 0;
-        align-self: stretch;
-        color: var(--neutral-300, #b7b7b7);
-        font-family: Nunito Sans;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 125%;
+  .sidebarContainer-link {
+    text-decoration: none;
+    display: flex;
+    padding: 12px 24px;
+    align-items: center;
+    gap: 12px;
+    flex: 1 0 0;
+    align-self: stretch;
+    color: var(--neutral-300, #b7b7b7);
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%;
 
-        &:hover {
-            color: white;
+    &:hover {
+      color: white;
 
-            svg {
-                path {
-                    stroke: white;
-                }
-            }
+      svg {
+        path {
+          stroke: white;
         }
+      }
     }
+  }
+  .active-sidebarContainer-link {
+    color: white;
+    svg {
+      path {
+        stroke: white;
+      }
+    }
+  }
 }
 
 .navbarLogo {
-    display: flex;
-    padding: 0px 32px 44px 24px;
-    align-items: center;
-    gap: 12px;
-    align-self: stretch;
+  display: flex;
+  padding: 0px 32px 44px 24px;
+  align-items: center;
+  gap: 12px;
+  align-self: stretch;
 }
 
 .sidebar-info {
-    margin-bottom: 10px;
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    padding: 0px 24px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 12px;
-    align-self: stretch;
+  margin-bottom: 10px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  padding: 0px 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  align-self: stretch;
 
-    .sidebarInfo-link {
-        text-decoration: none;
-        color: var(--neutral-300, #b7b7b7);
-        font-family: Nunito Sans;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 100%;
-    }
+  .sidebarInfo-link {
+    text-decoration: none;
+    color: var(--neutral-300, #b7b7b7);
+    font-family: Nunito Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+  }
 
-    .sidebarInfo-span {
-        margin-top: 12px;
-        color: var(--neutral-400, #5c5c5c);
-        font-family: Nunito Sans;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 140%;
-    }
+  .sidebarInfo-span {
+    margin-top: 12px;
+    color: var(--neutral-400, #5c5c5c);
+    font-family: Nunito Sans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
 }

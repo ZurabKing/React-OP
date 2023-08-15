@@ -9,13 +9,20 @@ export const MainLayout = ({ children }) => {
       <div>
         <Navbar />
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', width: '100%', backgroundColor: '#000' }}>
-      <div className="header-children">
-        <Header schoolNumber="Школа 15" schoolStatus="Модератор" />
-      </div>
-      <div className="child-container">
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          width: "100%",
+          backgroundColor: "#000",
+        }}
+      >
+        <div className="header-children">
+          <Header schoolNumber="Школа 15" schoolStatus="Модератор" />
+        </div>
+        <div className="child-container">
           <div className="child-block">{children}</div>
-      </div>
+        </div>
       </div>
     </div>
   );

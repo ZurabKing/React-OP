@@ -1,18 +1,32 @@
 import React from "react";
 import "../../components/Navbar/Navbar.scss";
 import Logo from "../../assets/Navbar/Logo.png";
+import { Link, useLocation } from "react-router-dom";
+import { routes } from "../../constants/routes";
 
 export default function Navbar() {
+  const { pathname } = useLocation();
+
+  const active = "active-sidebarContainer-link sidebarContainer-link";
+
+  const isTeacherClassNames = pathname.includes("teacher")
+    ? active
+    : "sidebarContainer-link";
+
+  const isStudentClassNames = pathname.includes("student")
+    ? active
+    : "sidebarContainer-link";
+
   return (
     <div className="navbarContainer">
       <div>
         <div className="navbarLogo">
-          <a href="#">
+          <Link to={"/"}>
             <img src={Logo} alt="logo" />
-          </a>
+          </Link>
         </div>
         <div className="sidebarContainer">
-          <a href="#" className="sidebarContainer-link">
+          <Link to={routes.teacher} className={isTeacherClassNames}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -43,8 +57,8 @@ export default function Navbar() {
               />
             </svg>
             Педагоги
-          </a>
-          <a href="#" className="sidebarContainer-link">
+          </Link>
+          <Link to={"/"} className={isStudentClassNames}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -68,7 +82,7 @@ export default function Navbar() {
               />
             </svg>
             Ученики
-          </a>
+          </Link>
         </div>
       </div>
 

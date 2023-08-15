@@ -2,11 +2,37 @@ import React from "react";
 import "./Header.scss";
 import Avatar from "../../assets/Header/Avatar.png";
 import Button from "../../ui-component/Button/Button";
+import { useLocation, useNavigate } from "react-router-dom";
+import { routes } from "../../constants/routes";
+import { TOKEN_KEY } from "../../core/axios";
 
 export default function Header(props) {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
+  const headerTitle = () => {
+    if (pathname === routes.teacher) {
+      return "Педагоги";
+    }
+
+    if (pathname.includes(routes.add)) {
+      return "Добавление педагога";
+    }
+
+    if (pathname.includes("profile")) {
+      return "Профиль педагога";
+    }
+  };
+
+  const handleExitClick = () => {
+    localStorage.removeItem(TOKEN_KEY);
+    navigate("/");
+    window.location.reload();
+  };
+
   return (
     <div className="headerContainer">
-      <h3 className="headerTitle">Педагоги</h3>
+      <h3 className="headerTitle">{headerTitle()}</h3>
       <div className="headerSchool__container">
         <div className="headerSchool__number">
           <span className="headerSchool__number-span">
@@ -47,7 +73,7 @@ export default function Header(props) {
                   </a>
                 </li>
                 <li className="btn-item">
-                  <a href="" className="btn-link">
+                  <button onClick={handleExitClick} className="btn-link">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
@@ -78,7 +104,7 @@ export default function Header(props) {
                       />
                     </svg>
                     Выйти
-                  </a>
+                  </button>
                 </li>
               </ul>
             </div>
