@@ -1,9 +1,13 @@
 .navbarContainer {
+    background-color: black;
+    position: relative;
     display: flex;
     width: 252px;
+    height: 100vh;
     padding: 24px 0px 28px 0px;
     flex-direction: column;
-    gap: 600px;
+    align-items: center;
+    flex-shrink: 0;
 }
 
 .sidebarContainer {
@@ -43,11 +47,16 @@
 }
 
 .sidebar-info {
-    margin-top: 12px;
+    margin-bottom: 10px;
+    position: absolute;
+    bottom: 0;
     display: flex;
+    padding: 0px 24px;
     flex-direction: column;
-    gap: 6px;
-    margin-left: 24px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
 
     .sidebarInfo-link {
         text-decoration: none;

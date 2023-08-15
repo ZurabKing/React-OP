@@ -1,0 +1,241 @@
+.authorization {
+  display: flex;
+  background-color: #F9F9F9;
+  width: 100%;
+  height: 100vh;
+
+  input[type=password]::-ms-reveal,
+  input[type=password]::-ms-clear
+  {
+      display: none;
+  }
+  
+  h2 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+  }
+
+  &-block {
+    position: relative;
+    margin-left: auto;
+    width: 480px;
+    height: 100%;
+    background: #FFFFFF;
+    border: 1px solid #F0F0F0;
+    padding: 0 80px;
+    border-radius: 44px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .authorization_img {
+    margin-top: 30px;
+    margin-left: 60px;
+  }
+  
+  &-form {
+    margin-top: 40px;
+
+    label {
+      position: relative;
+      
+      .icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 14px;
+
+        &.eye {
+          left: unset;
+          right: 14px;
+          cursor: pointer;
+        }
+      }
+
+      input {
+        width: 100%;
+        margin-bottom: 12px;
+        padding-left: 45px;
+      }
+    }
+
+    input[type=checkbox] {
+      width: unset;
+
+      &:checked {
+        background-color: red;
+      }
+    }
+
+    button {
+      margin-top: 40px;
+      width: 100%;
+    }
+
+    .remember {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+      label {
+        font-size: 14px;
+        line-height: 125%;
+        display: flex;
+        align-items: center;
+        display: flex;
+        align-items: center;
+        user-select: none;
+        position: relative;
+
+        span {
+          cursor: pointer;
+          width: 16px;
+          height: 16px;
+          border: 1px solid #000;
+          background-color: transparent;
+          display: inline-block;
+          border-radius: 3px;
+          margin-right: 8px;
+        }
+        
+        input {
+          position: absolute;
+          z-index: -1;
+          opacity: 0;
+        }
+
+        input:checked+span {
+          background: #2898EC url('../../assets/img/icons/checkmark.png') no-repeat;
+          background-position: center;
+          border-color: #2898EC;
+        }
+      }
+      
+      .forgot-password {
+        font-family: 'Nunito Sans';
+        font-size: 14px;
+        line-height: 125%;
+        color: #1384D9;
+        text-decoration: none;
+        margin-left: auto;
+      }
+    }
+
+  }
+
+  .signIn_gosuslugi {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    border-radius: 10px;
+    max-width: 336px;
+    height: 52px;
+    border: 1px solid #F0F0F0;
+  }
+  
+  .privacy-policy {
+    position: absolute;
+    bottom: 30px;
+    font-size: 12px;
+    line-height: 100%;
+    color: #5C5C5C;
+    left: 115px;
+
+    .site-rules {
+      display: flex;
+
+      span {
+        margin: 0 3px;
+      }
+
+      a {
+        font-size: 12px;
+        line-height: 100%;
+        color: #5C5C5C;
+        text-decoration: none;
+        transition: 0.1s;
+
+        &:hover {
+          color: #1384D9;
+        }
+      }
+    }
+
+  }
+
+  .modal {
+    border-radius: 12px;
+    background-color: #fff;
+    overflow: auto;
+    left: 60px;
+    top: 150%;
+    transition: 0.3s linear;
+    
+    &-body {
+      position: relative;
+      padding: 60px;
+      width: 880px;
+  
+      .close {
+        font-size: 25px;
+        left: 50%;
+        position: absolute;
+        top: 60px;
+        cursor: pointer;
+        right: 60px;
+        border-radius: 12px;
+  
+        img {
+          position: absolute;
+          right: 0;
+        }
+      }
+
+      h2 {
+        font-weight: 800;
+        font-size: 28px;
+        line-height: 100%;
+        margin-top: 60px;
+      }
+
+      span {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 125%;
+        margin-top: 40px;
+        display: inline-block;
+        margin-bottom: 32px;
+      }
+
+      ol {
+        li {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 125%;
+          margin-bottom: 32px;
+          
+          h3 {
+            margin-top: unset;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 100%;
+            margin-bottom: 20px;
+          }
+
+          ul {
+            padding-left: 27px;
+            margin-bottom: 32px;
+            li {
+              margin-bottom: unset;
+              list-style: disc;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Button.scss";
 
-export default function Button({ children }) {
+export default function Button({ children, Icon }) {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const toggleDropDrown = () => {
@@ -20,10 +20,10 @@ export default function Button({ children }) {
         >
           <path
             d="M6 9.5L12 15.5L18 9.5"
-            stroke= 'white'
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       </button>

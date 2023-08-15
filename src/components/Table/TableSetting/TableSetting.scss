@@ -1,26 +1,39 @@
 .tableSetting-container {
+    width: 235px;
     display: flex;
+    padding: 14px;
+    justify-content: space-between;
     align-items: center;
-    gap: 40px;
+    align-self: stretch;
+    border-top: 1px solid var(--neutral-150, #f0f0f0);
+    border-bottom: 1px solid var(--neutral-150, #f0f0f0);
+    background: var(--bw-900-w, #fff);
+
+    .setting-arrow {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
 
     .tableSetting-title {
         overflow: hidden;
         color: var(--bw-900-b, #000);
         text-overflow: ellipsis;
-        whitespace: nowrap;
+        white-space: nowrap;
         font-family: Noto Sans;
         font-size: 16px;
         font-style: normal;
         font-weight: 600;
-        line-height: 100%; 
+        line-height: 100%;
     }
 
-    .setting-btn{
+    .setting-btn {
         display: flex;
         align-items: center;
         gap: 8px;
 
-        .setting{
+        .setting {
+            cursor: pointer;
             border: none;
             background-color: transparent;
         }
