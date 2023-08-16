@@ -1,4 +1,4 @@
-.fio-container{
+.fio-container {
     margin-top: 24px;
     margin-bottom: 24px;
     display: flex;
@@ -6,8 +6,48 @@
     gap: 12px;
 }
 
-.data-container{
+.data-container {
     display: flex;
     align-items: center;
     gap: 12px;
+}
+
+.collapse__title-block {
+    color: #000;
+    font-family: Nunito Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    margin-bottom: 24px;
+    margin-top: 38px;
+}
+
+
+.input2 {
+    width: 294px;
+    display: flex;
+    padding: 12px;
+    align-items: center;
+    gap: 12px;
+    border-radius: 8px;
+    background: var(--neutral-100, #f9f9f9);
+    border: none;
+    outline: none;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+}
+
+.Contact-Addteacher{
+    margin-top: 32px;
+}
+
+.Add-block{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 32px;
 }

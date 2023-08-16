@@ -1,30 +1,15 @@
-import React, { useRef } from "react";
+import React from "react";
 import "./Education.scss";
 import Input from "../../ui-component/Input/Input";
 import { DatePicker } from "../../ui-component/DatePicker/DatePicker";
 import TeacherButton from "../../ui-component/TeacherBtn/TeacherButton";
+import AddScan from "../AddTeacher/AddFile/AddFile";
+import AddScanComponent from "../AddTeacher/AddScan/AddScan";
 
 export default function Education() {
   const [selectedOption, setSelectedOption] = React.useState("");
   const [startDate, setStartDate] = React.useState(new Date());
   const [startDate1, setStartDate1] = React.useState(new Date());
-  const [selectedImage, setSelectedImage] = React.useState(null);
-  const [imageName, setImageName] = React.useState("");
-  const fileInputRef = useRef(null);
-
-  const handleButtonClick = () => {
-    fileInputRef.current.click();
-  };
-
-  const handleRemoveImage = () => {
-    setSelectedImage(null);
-  };
-
-  const handleImageUpload = (event) => {
-    const imageFile = event.target.files[0];
-    setSelectedImage(URL.createObjectURL(imageFile));
-    setImageName(imageFile.name);
-  };
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
@@ -50,6 +35,7 @@ export default function Education() {
         </div>
 
         <Input
+          className={"input2"}
           width={314}
           name="name"
           title="Место учебы"
@@ -58,45 +44,22 @@ export default function Education() {
       </div>
       <div className="datePickers-block">
         <DatePicker
-          className="picker__input"
+          className="input2"
           title="Дата начала обучения"
           selected={startDate}
           onChange={(date) => setStartDate(date)}
+          popperPlacement="top-start"
         />
         <DatePicker
-          className="picker__input"
+          className="input2"
           title="Дата окончания обучения"
           selected={startDate1}
           onChange={(date) => setStartDate1(date)}
+          popperPlacement="top-start"
         />
       </div>
       <div className="diplom-container">
-        <h4>Скан диплома</h4>
-        <div>
-          <div className="image-upload-container">
-            <TeacherButton
-              onClick={handleButtonClick}
-              backcolor={"var(--primery-500, #2898EC)"}
-              color={"white"}
-            >
-              Загрузить фото
-            </TeacherButton>
-            <TeacherButton
-              backcolor={"var(--neutral-100, #F9F9F9)"}
-              color={"#000"}
-              onClick={handleRemoveImage}
-            >
-              Удалить
-            </TeacherButton>
-            <input
-              style={{ display: "none" }}
-              type="file"
-              accept="image/*"
-              onChange={handleImageUpload}
-            />
-            {imageName && <p>{imageName}</p>}
-          </div>
-        </div>
+        <AddScanComponent />
       </div>
     </div>
   );

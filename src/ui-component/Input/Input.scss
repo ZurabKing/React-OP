@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
-    
+
     .input-text {
         color: var(--bw-900-b, #000);
         font-family: Nunito Sans;
@@ -14,6 +14,38 @@
     }
 
     .input {
+        display: flex;
+        padding: 12px;
+        align-items: center;
+        gap: 12px;
+        border-radius: 8px;
+        background: var(--neutral-100, #f9f9f9);
+        border: none;
+        outline: none;
+        font-family: Nunito Sans;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125%;
+    }
+    .input1 {
+        width: 314px;
+        display: flex;
+        padding: 12px;
+        align-items: center;
+        gap: 12px;
+        border-radius: 8px;
+        background: var(--neutral-100, #f9f9f9);
+        border: none;
+        outline: none;
+        font-family: Nunito Sans;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125%;
+    }
+    .input2 {
+        width: 294px;
         display: flex;
         padding: 12px;
         align-items: center;

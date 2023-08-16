@@ -18,7 +18,7 @@ export function SelectedClass() {
     <div className="App">
       <h4 className="selectedClass__title">Классный руководитель?</h4>
       <div className="CheckboxComponent-container">
-        <CheckboxComponent>
+        <CheckboxComponent text={'Да'}>
           <div className="selectedClass-block">
             <select
               className="selectClass-container"

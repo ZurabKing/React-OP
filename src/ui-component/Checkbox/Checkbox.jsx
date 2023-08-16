@@ -1,7 +1,7 @@
 import React from "react";
 import "./Checkbox.scss";
 
-function CheckboxComponent({children}) {
+function CheckboxComponent({children,text}) {
   const [isChecked, setIsChecked] = React.useState(false);
 
   const handleCheckboxChange = () => {
@@ -16,7 +16,7 @@ function CheckboxComponent({children}) {
           checked={isChecked}
           onChange={() => setIsChecked(!isChecked)}
         />
-        Да
+        {text}
       </label>
       {isChecked && (
         <div>

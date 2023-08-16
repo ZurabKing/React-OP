@@ -5,11 +5,6 @@ import "./DatePicker.scss";
 import { RiCalendarLine } from "react-icons/ri";
 registerLocale("ru", ru);
 
-const DatePickerExample = () => {
-  const datePickerStyle = {
-    width: "200px",
-  };
-};
 
 const DateInput = ({ value, onChange }) => {
   return (

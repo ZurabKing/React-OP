@@ -24,11 +24,10 @@
     cursor: pointer;
 }
 
-.datepicker-container{
+.datepicker-container {
     display: flex;
     align-items: center;
     position: relative;
-    
 }
 
 .date-title {
@@ -41,7 +40,27 @@
     margin-bottom: 12px;
 }
 
-.datePiker2{
+.datePiker2 {
     width: 294px;
 }
 
+.react-datepicker {
+    font-size: 13px; /* Измените размер шрифта в календаре */
+}
+
+/* Размер заголовка календаря */
+.react-datepicker__header {
+    padding: 15px; /* Измените отступы в заголовке */
+}
+
+/* Размер дней в календаре */
+.react-datepicker__day {
+    width: 30px; /* Измените ширину дней */
+    height: 10px; /* Измените высоту дней */
+    line-height: 10px; /* Измените высоту строки для выравнивания текста */
+}
+
+/* Размер кнопок переключения месяца */
+.react-datepicker__navigation {
+    font-size: 10px; /* Измените размер шрифта кнопок */
+}

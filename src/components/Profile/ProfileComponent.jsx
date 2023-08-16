@@ -3,6 +3,8 @@ import "./ProfileComponent.scss";
 import { useParams } from "react-router-dom";
 import { Api } from "../../api";
 import { RegistrationContext } from "../../context";
+import { RiCalendarLine } from "react-icons/ri";
+import DiplomScan from "../../assets/img/Diplom.png";
 
 export const ProfileComponent = () => {
   const { id } = useParams();
@@ -59,6 +61,68 @@ export const ProfileComponent = () => {
                 {profile?.liter}
               </h3>
             </div>
+          </div>
+        </div>
+      </div>
+      <hr className="education-hr" />
+      <div className="profile-education-container">
+        <div className="profile-education-container-title-block">
+          <h3 className="profile-education-container-title">Образование</h3>
+          <span className="profile-education-container-subtitle">
+            Вся информация про образование
+          </span>
+        </div>
+
+        <div className="education-level-container">
+          <div className="education-level-block">
+            <div className="education-level-info">
+              <h4 className="education-level-info-title">
+                Среднее образование
+              </h4>
+              <span className="education-level-info-span">
+                СОШ 15А Средние Ачалуки
+              </span>
+              <span className="education-level-info-span-icon">
+                <RiCalendarLine /> 12.12.1985 - 24.07.1995
+              </span>
+            </div>
+            <div className="education-level-scan">
+              <img src={DiplomScan} alt="" />
+            </div>
+          </div>
+          <div className="education-level-block">
+            <div className="education-level-info">
+              <h4 className="education-level-info-title">Высшее образование</h4>
+              <span className="education-level-info-span">
+                СОШ 15А Средние Ачалуки
+              </span>
+              <span className="education-level-info-span-icon">
+                <RiCalendarLine /> 12.12.1985 - 24.07.1995
+              </span>
+            </div>
+            <div className="education-level-scan">
+              <img src={DiplomScan} alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr className="education-hr" />
+      <div className="experience-container">
+        <div className="experience-title-block">
+          <h3 className="experience-title">Опыт</h3>
+          <span className="experience-subtitle">
+            Вся информация про опыт работы
+          </span>
+        </div>
+        <div className="experience-info-block">
+          <div className="experience-info">
+            <h4 className="experience-info-title">Учитель математики</h4>
+            <span className="experience-info-span">
+              СОШ 15А Средние Ачалуки
+            </span>
+            <span className="experience-info-span-icon">
+              <RiCalendarLine /> 12.12.1985 - 24.07.1995
+            </span>
           </div>
         </div>
       </div>
