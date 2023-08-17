@@ -93,7 +93,7 @@ export default function Table() {
           <h4 className="schoolInfo-title">{user?.user?.nickname}</h4>
           <span className="schoolInfo-title-span">{user?.user?.city}</span>
           <span className="schoolInfo-title-span">
-            Образованна в {user?.user?.born} году
+            Основана в {user?.user?.born} году
           </span>
           <div className="schoolInfo-teacherBlock">
             <div className="schoolInfo-teachers">
