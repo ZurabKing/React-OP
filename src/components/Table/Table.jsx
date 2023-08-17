@@ -5,6 +5,8 @@ import SchoolCard from "../../assets/img/school.png";
 import Book from "../../assets/img/book-marked.svg";
 import HeaderStudents from "../../assets/img/graduation-cap.svg";
 import { TableCell } from "./TableCell";
+import { RegistrationContext } from "../../context";
+import { Link } from "react-router-dom";
 
 function fetchWrapper(endpoint, options = {}) {
   const { headers, otherOptions } = options;
@@ -33,6 +35,7 @@ const columns = [
 export default function Table() {
   const [teachers, setTeachers] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
+  const { user } = React.useContext(RegistrationContext);
 
   React.useEffect(() => {
     setIsLoading(true);
@@ -44,11 +47,13 @@ export default function Table() {
       });
   }, []);
 
-  if (isLoading) {
-    return <h1>Loading...</h1>;
+  if (!user?.user) {
+    return null;
   }
 
-  console.log(teachers);
+  if (isLoading) {
+    return <h1>Загрузка...</h1>;
+  }
 
   return (
     <div className="container__school">
@@ -56,21 +61,30 @@ export default function Table() {
         <table className="table">
           <thead>
             <tr className="TableTr">
-              {columns.map((column) =>  <TableSetting key={column.id} {...column} />)}
+              {columns.map((column) => (
+                <TableSetting key={column.id} {...column} />
+              ))}
             </tr>
           </thead>
-
           <tbody>
-            {teachers.map((cell) => <TableCell key={cell.id} {...cell} />)}
+            {teachers.map((cell) => (
+              <TableCell key={cell.id} {...cell} />
+            ))}
           </tbody>
         </table>
       </div>
       <div className="schoolCard-container">
-        <img src={SchoolCard} />
+        <img
+          src={user?.user?.profile_photo_path}
+          className="schoolCard"
+          alt="Avatar"
+        />
         <div className="schoolInfo-block">
-          <h4 className="schoolInfo-title">СОШ 14</h4>
-          <span className="schoolInfo-title-span">Средние Ачалуки</span>
-          <span className="schoolInfo-title-span">Образованна в 1997 году</span>
+          <h4 className="schoolInfo-title">{user?.user?.nickname}</h4>
+          <span className="schoolInfo-title-span">{user?.user?.city}</span>
+          <span className="schoolInfo-title-span">
+            Образованна в {user?.user?.born} году
+          </span>
           <div className="schoolInfo-teacherBlock">
             <div className="schoolInfo-teachers">
               <img src={Book} alt="" />
@@ -87,7 +101,7 @@ export default function Table() {
               </div>
             </div>
           </div>
-          <button className="schoolInfo__btn">
+          <Link to="add" className="schoolInfo__btn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -110,8 +124,8 @@ export default function Table() {
                 strokeLinejoin="round"
               />
             </svg>
-            Добавить преподователя
-          </button>
+            Добавить преподавателя
+          </Link>
         </div>
       </div>
     </div>

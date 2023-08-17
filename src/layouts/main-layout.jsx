@@ -18,7 +18,7 @@ export const MainLayout = ({ children }) => {
         }}
       >
         <div className="header-children">
-          <Header schoolNumber="Школа 15" schoolStatus="Модератор" />
+          <Header />
         </div>
         <div className="child-container">
           <div className="child-block">{children}</div>

@@ -33,8 +33,6 @@ export const ProfileComponent = () => {
     return null;
   }
 
-  console.log(profile);
-
   return (
     <div className="profile-root">
       <div className="profile-header">
@@ -80,17 +78,19 @@ export const ProfileComponent = () => {
             return (
               <div className="education-level-block">
                 <div className="education-level-info">
-                  <h4 className="education-level-info-title">{item.type}</h4>
+                  <h4 className="education-level-info-title">{item?.type}</h4>
                   <span className="education-level-info-span">
-                    {item.university}
+                    {item?.university}
                   </span>
                   <span className="education-level-info-span-icon">
-                    <RiCalendarLine /> {item.from} - {item.to}
+                    <RiCalendarLine /> {item?.from} - {item?.to}
                   </span>
                 </div>
-                <div className="education-level-scan">
-                  <img src={item.scan} />
-                </div>
+                {item?.scan && (
+                  <div className="education-level-scan">
+                    <img src={item?.scan} alt="Scan" />
+                  </div>
+                )}
               </div>
             );
           })}
@@ -109,10 +109,10 @@ export const ProfileComponent = () => {
             return (
               <div className="experience-info-block">
                 <div className="experience-info">
-                  <h4 className="experience-info-title">{item.post}</h4>
-                  <span className="experience-info-span">{item.work}</span>
+                  <h4 className="experience-info-title">{item?.post}</h4>
+                  <span className="experience-info-span">{item?.work}</span>
                   <span className="experience-info-span-icon">
-                    <RiCalendarLine /> {item.from} - {item.to}
+                    <RiCalendarLine /> {item?.from} - {item?.to}
                   </span>
                 </div>
               </div>

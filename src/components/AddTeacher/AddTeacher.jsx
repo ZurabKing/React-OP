@@ -57,10 +57,6 @@ export function AddTeacher() {
     }
   };
 
-  const token = localStorage.getItem("token");
-
-  console.log(token);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(formRef.current);
