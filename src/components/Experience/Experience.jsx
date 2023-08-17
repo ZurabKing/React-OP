@@ -17,7 +17,7 @@ export default function Education({ index }) {
         <div className="Selected-app"></div>
         <Input
           className={"input2"}
-          name={`works[${index}][works]`}
+          name={`works[${index}][work]`}
           title="Место работы"
           placeholder={"Место работы"}
         />
