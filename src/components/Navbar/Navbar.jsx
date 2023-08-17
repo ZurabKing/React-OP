@@ -87,10 +87,10 @@ export default function Navbar() {
       </div>
 
       <div className="sidebar-info">
-        <a href="" className="sidebarInfo-link">
+        <a href="!#" className="sidebarInfo-link">
           Правила сайта
         </a>
-        <a href="" className="sidebarInfo-link">
+        <a href="!#" className="sidebarInfo-link">
           Политика конфиденциальности
         </a>
         <span className="sidebarInfo-span">

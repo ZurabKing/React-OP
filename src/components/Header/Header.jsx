@@ -73,7 +73,7 @@ export default function Header() {
           <div className="list-container">
             <ul className="btn-list">
               <li className="btn-item">
-                <a href="#" className="btn-link">
+                <a href="!#" className="btn-link">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
