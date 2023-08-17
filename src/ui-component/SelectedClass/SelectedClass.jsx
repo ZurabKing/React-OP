@@ -2,7 +2,7 @@ import React from "react";
 import "./SelectedClass.scss";
 import CheckboxComponent from "../Checkbox/Checkbox";
 
-export function SelectedClass() {
+export function SelectedClass({ classNumber, classLatter }) {
   const [selectedOption, setSelectedOption] = React.useState("");
   const [selectedOption1, setSelectedOption1] = React.useState("");
 
@@ -18,11 +18,12 @@ export function SelectedClass() {
     <div className="App">
       <h4 className="selectedClass__title">Классный руководитель?</h4>
       <div className="CheckboxComponent-container">
-        <CheckboxComponent text={'Да'}>
+        <CheckboxComponent text={"Да"}>
           <div className="selectedClass-block">
             <select
               className="selectClass-container"
               value={selectedOption}
+              name="class"
               onChange={handleOptionChange}
             >
               <option value="1">1</option>
@@ -42,6 +43,7 @@ export function SelectedClass() {
               className="selectClass-container"
               value={selectedOption1}
               onChange={handleOptionChange1}
+              name="liter"
             >
               <option value="А">А</option>
               <option value="Б">Б</option>

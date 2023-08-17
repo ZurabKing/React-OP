@@ -10,18 +10,24 @@ export default function Contact() {
         <Input
           className={"input1"}
           title="Номер"
+          name={"phone"}
           placeholder={"+7 (928) 321 22 22"}
         />
-        <Input className={"input1"} title="Почта" placeholder={"ya@mail.ru"} />
+        <Input
+          className={"input1"}
+          title="Почта"
+          name={"email"}
+          placeholder={"ya@mail.ru"}
+        />
         <Input
           className={"input1"}
           title="Whatsapp"
+          name={"whatsapp"}
           placeholder={"+7 (928) 321 22 22"}
         />
       </div>
       <div className="contact-checkbox">
-        <CheckboxComponent text="Совпадает с основным номером">
-        </CheckboxComponent>
+        <CheckboxComponent text="Совпадает с основным номером"></CheckboxComponent>
       </div>
     </div>
   );
