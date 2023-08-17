@@ -2,36 +2,27 @@ import React from "react";
 import "./AddFile.scss";
 import TeacherButton from "../../../ui-component/TeacherBtn/TeacherButton";
 
-export default function AddFile() {
-  const [selectedImage, setSelectedImage] = React.useState(null);
-  const [imageURL, setImageURL] = React.useState("");
-  const fileInputRef = React.useRef(null);
-
+export default function AddFile(props) {
   const handleButtonClick = () => {
-    fileInputRef.current.click();
+    props.fileInputRef.current.click();
   };
 
   const handleRemoveImage = () => {
-    setSelectedImage(null);
-    setImageURL("");
+    props.setSelectedImage(null);
+    props.setImageURL("");
   };
 
-  const handleImageChange = (event) => {
-    const selectedFile = event.target.files[0];
-
-    if (selectedFile) {
-      setSelectedImage(selectedFile);
-      const imageURL = URL.createObjectURL(selectedFile);
-      setImageURL(imageURL);
-    }
-  };
   return (
     <div className="App">
       <h3 className="AddFile__title">Общее</h3>
       <div className="root">
         <div className="img-container">
-          {selectedImage && (
-            <img className="img-container" src={imageURL} alt="Selected" />
+          {props.selectedImage && (
+            <img
+              className="img-container"
+              src={props.imageURL}
+              alt="Selected"
+            />
           )}
         </div>
         <div className="Add__btn-block">
@@ -57,13 +48,7 @@ export default function AddFile() {
             </span>
           </div>
         </div>
-
-        <input
-          ref={fileInputRef}
-          style={{ display: "none" }}
-          type="file"
-          onChange={handleImageChange}
-        />
+        {props.input}
       </div>
     </div>
   );

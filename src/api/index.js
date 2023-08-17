@@ -1,7 +1,7 @@
 import * as auth from "./auth";
-import * as profile from "./profile";
+import * as teachers from "./teacher";
 
 export const Api = {
   auth,
-  profile,
+  teachers,
 };

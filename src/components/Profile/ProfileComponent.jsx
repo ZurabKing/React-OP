@@ -16,7 +16,7 @@ export const ProfileComponent = () => {
 
   const fetchUserProfile = async () => {
     try {
-      const data = await Api.profile.getTeacherProfile(id);
+      const data = await Api.teachers.getTeacherProfile(id);
       setProfile(data);
     } catch (error) {
       alert(error);

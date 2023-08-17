@@ -2,26 +2,9 @@ import React from "react";
 import "./AddScan.scss";
 import TeacherButton from "../../../ui-component/TeacherBtn/TeacherButton";
 
-export default function AddScanComponent() {
-  const [selectedImage, setSelectedImage] = React.useState(null);
-  const [imageName, setImageName] = React.useState("");
-  const fileInputRef = React.useRef(null);
-
-  const handleButtonClick = () => {
-    fileInputRef.current.click();
-  };
-
+export default function AddScanComponent(props) {
   const handleRemoveImage = () => {
-    setSelectedImage(null);
-  };
-
-  const handleImageChange = (event) => {
-    const selectedFile = event.target.files[0];
-
-    if (selectedFile) {
-      setSelectedImage(selectedFile);
-      setImageName(selectedFile.name);
-    }
+    props.setSelectedImage(null);
   };
 
   return (
@@ -32,18 +15,15 @@ export default function AddScanComponent() {
           <input
             className="scan-input"
             type="text"
+            readOnly
             placeholder="Scan_diploma.png"
-            value={imageName}
+            value={props.imageName}
           />
         </div>
         <div className="scan-btn-block">
-          <TeacherButton
-            onClick={handleButtonClick}
-            backcolor={"var(--primery-500, #2898EC)"}
-            color={"white"}
-          >
-            Загрузить фото
-          </TeacherButton>
+          <label htmlFor={`education[${props.index}][scan]`}>
+            <div className="scan__btn">Загрузить фото</div>
+          </label>
           <TeacherButton
             onClick={handleRemoveImage}
             backcolor={"var(--neutral-100, #F9F9F9)"}
@@ -52,12 +32,7 @@ export default function AddScanComponent() {
             Удалить
           </TeacherButton>
         </div>
-        <input
-          style={{ display: "none" }}
-          type="file"
-          ref={fileInputRef}
-          onChange={handleImageChange}
-        />
+        {props.input}
       </div>
     </div>
   );

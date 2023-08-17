@@ -1,59 +1,71 @@
 .scan-container {
+  display: flex;
+  flex-direction: column;
+
+  .scan__title {
+    color: var(--bw-900-b, #000);
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    margin-bottom: 12px;
+  }
+
+  .scan__block {
     display: flex;
-    flex-direction: column;
+  }
 
-    .scan__title {
-        color: var(--bw-900-b, #000);
-        font-family: Nunito Sans;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 100%;
-        margin-bottom: 12px;
+  .scan__block-url {
+    display: flex;
+
+    .scan-input {
+      overflow: hidden;
+      text-align: center;
+      height: 44px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      background: var(--neutral-200, #dfdfdf);
+      border: none;
+      outline: none;
+      color: var(--neutral-400, #5c5c5c);
+      font-family: Nunito Sans;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 125%;
     }
+  }
 
-    .scan__block {
-        display: flex;
-    }
-
-    .scan__block-url {
-        display: flex;
-
-        .scan-input {
-            overflow: hidden;
-            text-align: center;
-            height: 44px;
-            padding: 12px 24px;
-            border-radius: 8px;
-            background: var(--neutral-200, #dfdfdf);
-            border: none;
-            outline: none;
-            color: var(--neutral-400, #5c5c5c);
-            font-family: Nunito Sans;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 125%; 
-        }
-    }
-
-    .scan__image-block {
-        display: flex;
-        height: 44px;
-        padding: 12px 24px;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        flex: 1 0 0;
-        border-radius: 8px;
-        background: var(--neutral-200, #dfdfdf);
-    }
+  .scan__image-block {
+    display: flex;
+    height: 44px;
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex: 1 0 0;
+    border-radius: 8px;
+    background: var(--neutral-200, #dfdfdf);
+  }
 }
 
 .scan-btn-block {
-    margin-left: 8px;
-    display: flex;
-    gap: 8px;
+  margin-left: 8px;
+  display: flex;
+  gap: 8px;
 }
 
-
+.scan__btn {
+  border: none;
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 8px;
+  background: var(--primery-500, #2898ec);
+  color: var(--bw-900-w, #fff);
+  font-family: Nunito Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%;
+}

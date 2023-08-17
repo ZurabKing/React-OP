@@ -1,21 +1,22 @@
 input {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 12px;
+
+  label {
     display: flex;
     align-items: center;
-    gap: 25px;
-
-    label {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        color: var(--bw-900-b, #000);
-        font-family: Nunito Sans;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 125%;
-    }
+    gap: 8px;
+    color: var(--bw-900-b, #000);
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+  }
 }

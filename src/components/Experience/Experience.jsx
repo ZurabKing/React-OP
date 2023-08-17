@@ -3,7 +3,7 @@ import "./Experience.scss";
 import Input from "../../ui-component/Input/Input";
 import { DatePicker } from "../../ui-component/DatePicker/DatePicker";
 
-export default function Education() {
+export default function Education({ index }) {
   const [selectedOption, setSelectedOption] = React.useState("");
   const [startDate, setStartDate] = React.useState(new Date());
   const [startDate1, setStartDate1] = React.useState(new Date());
@@ -17,13 +17,13 @@ export default function Education() {
         <div className="Selected-app"></div>
         <Input
           className={"input2"}
-          name="name"
+          name={`works[${index}][works]`}
           title="Место работы"
           placeholder={"Место работы"}
         />
         <Input
           className={"input2"}
-          name="name"
+          name={`works[${index}][post]`}
           title="Должность"
           placeholder={"Напишите должность"}
         />
@@ -32,11 +32,13 @@ export default function Education() {
         <DatePicker
           className="input2"
           title="Дата начала работы"
+          name={`works[${index}][from]`}
           selected={startDate}
           onChange={(date) => setStartDate(date)}
         />
         <DatePicker
           className="input2"
+          name={`works[${index}][to]`}
           title="Дата увольнения"
           selected={startDate1}
           onChange={(date) => setStartDate1(date)}
