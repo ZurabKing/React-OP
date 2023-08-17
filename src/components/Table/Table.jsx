@@ -7,6 +7,7 @@ import HeaderStudents from "../../assets/img/graduation-cap.svg";
 import { TableCell } from "./TableCell";
 import { RegistrationContext } from "../../context";
 import { Link } from "react-router-dom";
+import loading from "../../assets/img/loader.gif";
 
 function fetchWrapper(endpoint, options = {}) {
   const { headers, otherOptions } = options;
@@ -29,7 +30,7 @@ const columns = [
   { id: 2, title: "Предмет" },
   { id: 3, title: "Возраст" },
   { id: 4, title: "Опыт работы" },
-  { id: 5, title: "Язык програмированния" },
+  { id: 5, title: "Номер телефона" },
 ];
 
 export default function Table() {
@@ -52,7 +53,16 @@ export default function Table() {
   }
 
   if (isLoading) {
-    return <h1>Загрузка...</h1>;
+    return (
+      <img
+        src={loading}
+        alt="Loader"
+        style={{
+          width: 54,
+          height: 54,
+        }}
+      />
+    );
   }
 
   return (
@@ -92,7 +102,7 @@ export default function Table() {
                 <h6 className="schoolInfo__teachers-title">
                   {user?.teachers_count}
                 </h6>
-                <span className="schoolInfo__teachers-span">Педагогов</span>
+                <span className="schoolInfo__teachers-span">Учителей</span>
               </div>
             </div>
             <div className="schoolInfo-students">
@@ -128,7 +138,7 @@ export default function Table() {
                 strokeLinejoin="round"
               />
             </svg>
-            Добавить преподавателя
+            Добавить учителя
           </Link>
         </div>
       </div>

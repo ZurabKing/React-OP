@@ -13,15 +13,15 @@ export default function Header() {
 
   const headerTitle = () => {
     if (pathname === routes.teacher) {
-      return "Педагоги";
+      return "Учителя";
     }
 
     if (pathname.includes(routes.add)) {
-      return "Добавление педагога";
+      return "Добавление учителя";
     }
 
     if (pathname.includes("profile")) {
-      return "Профиль педагога";
+      return "Профиль учителя";
     }
   };
 
@@ -72,7 +72,7 @@ export default function Header() {
         {isOpen && (
           <div className="list-container">
             <ul className="btn-list">
-              <li className="btn-item">
+              {/* <li className="btn-item">
                 <a href="!#" className="btn-link">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +98,7 @@ export default function Header() {
                   </svg>
                   Настройки
                 </a>
-              </li>
+              </li> */}
               <li className="btn-item">
                 <button onClick={handleExitClick} className="btn-link">
                   <svg

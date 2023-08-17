@@ -7,7 +7,7 @@ export default function TableSetting(props) {
     <th className="TableTh">
       <div className="tableSetting-container">
         <h3 className="tableSetting-title">{props.title}</h3>
-        <div className="setting-btn">
+        {/* <div className="setting-btn">
           <button className="setting">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +84,7 @@ export default function TableSetting(props) {
           <button className="setting-arrow">
             <img src={Arrow} alt="" />
           </button>
-        </div>
+        </div> */}
       </div>
     </th>
   );

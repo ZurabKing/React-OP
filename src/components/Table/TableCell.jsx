@@ -10,7 +10,7 @@ export function TableCell({
   discipline,
   born,
   works,
-  languages,
+  phone,
   id,
 }) {
   return (
@@ -24,7 +24,7 @@ export function TableCell({
       <td className="TableTd">{discipline}</td>
       <td className="TableTd">{calculateAge(born)}</td>
       <td className="TableTd">{getWorksExperience(works)}</td>
-      <td className="TableTd">{languages}</td>
+      <td className="TableTd">{phone}</td>
     </tr>
   );
 }

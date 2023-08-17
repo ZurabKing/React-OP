@@ -115,17 +115,15 @@ const Authorization = () => {
           <Button onClick={logIn} buttonColor="black">
             Войти
           </Button>
-
-          <a
+          {/* <a
             href="https://futurecode.p.rnds.pro/auth/authorize?client_id=SMg-polcb0Ic39oAHhs9xDCtYY1dhSHaZMkYLyIGtE0&response_type=code&scope=openid%20fullname%20birthdate%20gender%20mobile%20snils%20inn%20id_doc%20email&redirect_uri=https://crm.kod06.ru/auth/gosuslugi&provider=esia_oauth&state=1a73f168-4485-11ed-b878-0242ac120002"
             className="signIn_gosuslugi"
           >
             <img src={gosuslugi} alt="ГосУслуги" />
-          </a>
+          </a> */}
           {/* <Link to="/my-page" className='forgot-password_link restore-password' buttonColor='black'>Войти</Link> */}
         </form>
-
-        <div className="privacy-policy">
+        {/* <div className="privacy-policy">
           <p className="copyright">
             © 2021-2023 ООО «AIS». Все права защищены.
           </p>
@@ -138,7 +136,7 @@ const Authorization = () => {
               Политика конфиденциальности
             </a>
           </p>
-        </div>
+        </div> */}
       </div>
 
       <Modal modal={modal}>

@@ -56,9 +56,9 @@ export default function Navbar() {
                 strokeLinejoin="round"
               />
             </svg>
-            Педагоги
+            Учителя
           </Link>
-          <Link to={"/"} className={isStudentClassNames}>
+          {/* <Link to={"/"} className={isStudentClassNames}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -82,11 +82,11 @@ export default function Navbar() {
               />
             </svg>
             Ученики
-          </Link>
+          </Link> */}
         </div>
       </div>
 
-      <div className="sidebar-info">
+      {/* <div className="sidebar-info">
         <a href="!#" className="sidebarInfo-link">
           Правила сайта
         </a>
@@ -97,7 +97,7 @@ export default function Navbar() {
           © 2021-2023 LLC «AIS». <br />
           Все права защищены.
         </span>
-      </div>
+      </div> */}
     </div>
   );
 }
