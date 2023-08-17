@@ -33,6 +33,8 @@ export const ProfileComponent = () => {
     return null;
   }
 
+  console.log(profile);
+
   return (
     <div className="profile-root">
       <div className="profile-header">
@@ -74,36 +76,24 @@ export const ProfileComponent = () => {
         </div>
 
         <div className="education-level-container">
-          <div className="education-level-block">
-            <div className="education-level-info">
-              <h4 className="education-level-info-title">
-                Среднее образование
-              </h4>
-              <span className="education-level-info-span">
-                СОШ 15А Средние Ачалуки
-              </span>
-              <span className="education-level-info-span-icon">
-                <RiCalendarLine /> 12.12.1985 - 24.07.1995
-              </span>
-            </div>
-            <div className="education-level-scan">
-              <img src={DiplomScan} alt="" />
-            </div>
-          </div>
-          <div className="education-level-block">
-            <div className="education-level-info">
-              <h4 className="education-level-info-title">Высшее образование</h4>
-              <span className="education-level-info-span">
-                СОШ 15А Средние Ачалуки
-              </span>
-              <span className="education-level-info-span-icon">
-                <RiCalendarLine /> 12.12.1985 - 24.07.1995
-              </span>
-            </div>
-            <div className="education-level-scan">
-              <img src={DiplomScan} alt="" />
-            </div>
-          </div>
+          {profile?.education.map((item) => {
+            return (
+              <div className="education-level-block">
+                <div className="education-level-info">
+                  <h4 className="education-level-info-title">{item.type}</h4>
+                  <span className="education-level-info-span">
+                    {item.university}
+                  </span>
+                  <span className="education-level-info-span-icon">
+                    <RiCalendarLine /> {item.from} - {item.to}
+                  </span>
+                </div>
+                <div className="education-level-scan">
+                  <img src={item.scan} />
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
       <hr className="education-hr" />
@@ -114,16 +104,20 @@ export const ProfileComponent = () => {
             Вся информация про опыт работы
           </span>
         </div>
-        <div className="experience-info-block">
-          <div className="experience-info">
-            <h4 className="experience-info-title">Учитель математики</h4>
-            <span className="experience-info-span">
-              СОШ 15А Средние Ачалуки
-            </span>
-            <span className="experience-info-span-icon">
-              <RiCalendarLine /> 12.12.1985 - 24.07.1995
-            </span>
-          </div>
+        <div className="experience-container-block">
+          {profile?.works.map((item) => {
+            return (
+              <div className="experience-info-block">
+                <div className="experience-info">
+                  <h4 className="experience-info-title">{item.post}</h4>
+                  <span className="experience-info-span">{item.work}</span>
+                  <span className="experience-info-span-icon">
+                    <RiCalendarLine /> {item.from} - {item.to}
+                  </span>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
