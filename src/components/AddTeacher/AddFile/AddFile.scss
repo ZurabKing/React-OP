@@ -50,3 +50,17 @@
   gap: 8px;
   align-items: center;
 }
+
+.scan__btn {
+  border: none;
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 8px;
+  background: var(--primery-500, #2898ec);
+  color: var(--bw-900-w, #fff);
+  font-family: Nunito Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%;
+}

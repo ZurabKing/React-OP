@@ -89,14 +89,18 @@ export default function Table() {
             <div className="schoolInfo-teachers">
               <img src={Book} alt="" />
               <div className="schoolInfo__teachers-block">
-                <h6 className="schoolInfo__teachers-title">32</h6>
+                <h6 className="schoolInfo__teachers-title">
+                  {user?.teachers_count}
+                </h6>
                 <span className="schoolInfo__teachers-span">Педагогов</span>
               </div>
             </div>
             <div className="schoolInfo-students">
               <img src={HeaderStudents} alt="" />
               <div className="schoolInfo__teachers-block">
-                <h6 className="schoolInfo__teachers-title">400</h6>
+                <h6 className="schoolInfo__teachers-title">
+                  {user?.pupils_count}
+                </h6>
                 <span className="schoolInfo__teachers-span">Учеников</span>
               </div>
             </div>

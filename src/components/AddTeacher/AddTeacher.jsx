@@ -12,12 +12,14 @@ import PlusSvg from "../../assets/icons/plus.svg";
 import "./AddTeacher.scss";
 import Contact from "../Contact/Contact";
 import { Api } from "../../api";
+import { useNavigate } from "react-router-dom";
 
 export function AddTeacher() {
   const [startDate, setStartDate] = React.useState(new Date());
   const [educations, setEducations] = React.useState([true]);
   const [educations1, setEducations1] = React.useState([true]);
   const formRef = useRef(null);
+  const navigate = useNavigate();
 
   const onChangeEducation = (idx) => {
     const newEducations = [...educations];
@@ -47,8 +49,9 @@ export function AddTeacher() {
   const [imageURL, setImageURL] = React.useState("");
   const fileInputRef = React.useRef(null);
 
-  const handleImageChange = (event) => {
-    const selectedFile = event.target.files[0];
+  const handleImageChange = (e) => {
+    e.preventDefault();
+    const selectedFile = e.target.files[0];
 
     if (selectedFile) {
       setSelectedImage(selectedFile);
@@ -60,21 +63,9 @@ export function AddTeacher() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(formRef.current);
-    // try {
-    //   const res = await fetch("http://data.kod06.ru/api/teachers", {
-    //     method: "POST",
-    //     body: formData,
-    //     headers: {
-    //       authorization: "Bearer " + token,
-    //     },
-    //   });
-    //   console.log(res);
-    // } catch (error) {
-    //   alert(error);
-    // }
     try {
-      const data = await Api.teachers.addTeacher(formData);
-      console.log(data);
+      await Api.teachers.addTeacher(formData);
+      navigate("/teacher");
     } catch (error) {
       alert(error);
     }
@@ -94,6 +85,7 @@ export function AddTeacher() {
               ref={fileInputRef}
               style={{ display: "none" }}
               name="photo"
+              id="photo"
               type="file"
               onChange={handleImageChange}
             />

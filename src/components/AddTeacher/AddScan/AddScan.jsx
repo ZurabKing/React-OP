@@ -24,13 +24,13 @@ export default function AddScanComponent(props) {
           <label htmlFor={`education[${props.index}][scan]`}>
             <div className="scan__btn">Загрузить фото</div>
           </label>
-          <TeacherButton
+          {/* <TeacherButton
             onClick={handleRemoveImage}
             backcolor={"var(--neutral-100, #F9F9F9)"}
             color={"#000"}
           >
             Удалить
-          </TeacherButton>
+          </TeacherButton> */}
         </div>
         {props.input}
       </div>

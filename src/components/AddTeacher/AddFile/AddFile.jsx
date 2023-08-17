@@ -3,15 +3,6 @@ import "./AddFile.scss";
 import TeacherButton from "../../../ui-component/TeacherBtn/TeacherButton";
 
 export default function AddFile(props) {
-  const handleButtonClick = () => {
-    props.fileInputRef.current.click();
-  };
-
-  const handleRemoveImage = () => {
-    props.setSelectedImage(null);
-    props.setImageURL("");
-  };
-
   return (
     <div className="App">
       <h3 className="AddFile__title">Общее</h3>
@@ -27,20 +18,16 @@ export default function AddFile(props) {
         </div>
         <div className="Add__btn-block">
           <div className="Add__btn_container">
-            <TeacherButton
-              onClick={handleButtonClick}
-              backcolor={"var(--primery-500, #2898EC)"}
-              color={"white"}
-            >
-              Загрузить фото
-            </TeacherButton>
-            <TeacherButton
+            <label htmlFor={`photo`}>
+              <div className="scan__btn">Загрузить фото</div>
+            </label>
+            {/* <TeacherButton
               onClick={handleRemoveImage}
               backcolor={"var(--neutral-100, #F9F9F9)"}
               color={"#000"}
             >
               Удалить
-            </TeacherButton>
+            </TeacherButton> */}
           </div>
           <div className="Add__btn_span-block">
             <span>
