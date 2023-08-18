@@ -1,6 +1,6 @@
 import React from "react";
 import "./Authorization.scss";
-import authorizationImg from "../../assets/img/Programming-pana.png";
+import authorizationImg from "../../assets/img/hsbg.svg";
 import Input from "./UI/Input/Input";
 import Button from "./UI/Button/Button";
 import login from "../../assets/icons/at-sign.svg";
