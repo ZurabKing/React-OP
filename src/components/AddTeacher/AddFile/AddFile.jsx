@@ -7,15 +7,18 @@ export default function AddFile(props) {
     <div className="App">
       <h3 className="AddFile__title">Общее</h3>
       <div className="root">
-        <div className="img-container">
-          {props.selectedImage && (
-            <img
-              className="img-container"
-              src={props.imageURL}
-              alt="Selected"
-            />
-          )}
-        </div>
+        <label htmlFor={`photo`}>
+          <div className="img-container">
+            {props.selectedImage && (
+              <img
+                className="img-container"
+                onChange={props.onChange}
+                src={props.imageURL}
+                alt="Selected"
+              />
+            )}
+          </div>
+        </label>
         <div className="Add__btn-block">
           <div className="Add__btn_container">
             <label htmlFor={`photo`}>

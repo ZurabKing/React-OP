@@ -1,7 +1,7 @@
 .TableTd {
   border-right: 1px solid var(--neutral-150, #f0f0f0);
   display: inline-flexbox;
-  padding: 14px 14px 14px 10px;
+  padding: 14px 14px 14px 14px;
   border-bottom: 1px solid var(--neutral-150, #f0f0f0);
   overflow: hidden;
   color: var(--neutral-400, #5c5c5c);
@@ -154,6 +154,19 @@
 }
 
 .TableLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   text-decoration: none;
   color: var(--neutral-400, #5c5c5c);
+
+  img {
+    width: 28px;
+    height: 28px;
+    border-radius: 28px;
+  }
+}
+
+.number-td {
+  width: 50px;
 }

@@ -12,6 +12,7 @@ export function Selected({ title }) {
     <div className="Selected-app">
       <h4 className="selected__title">{title}</h4>
       <select
+        multiple
         className="select-container"
         name="discipline"
         value={selectedOption}

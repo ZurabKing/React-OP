@@ -1,6 +1,7 @@
 import React from "react";
 import "./SelectedClass.scss";
 import CheckboxComponent from "../Checkbox/Checkbox";
+import Input from "../Input/Input";
 
 export function SelectedClass({ classNumber, classLatter }) {
   const [selectedOption, setSelectedOption] = React.useState("");
@@ -36,10 +37,12 @@ export function SelectedClass({ classNumber, classLatter }) {
               <option value="8">8</option>
               <option value="9">9</option>
               <option value="10">10</option>
+              <option value="11">11</option>
             </select>
             {selectedOption && undefined}
 
-            <select
+            <Input className='input2 input4' name="liter" placeholder='Литтер'/>
+            {/* <select
               className="selectClass-container"
               value={selectedOption1}
               onChange={handleOptionChange1}
@@ -51,7 +54,7 @@ export function SelectedClass({ classNumber, classLatter }) {
               <option value="Г">Г</option>
               <option value="Д">Д</option>
             </select>
-            {selectedOption && undefined}
+            {selectedOption && undefined} */}
           </div>
         </CheckboxComponent>
       </div>

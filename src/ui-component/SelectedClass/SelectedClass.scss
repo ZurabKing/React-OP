@@ -1,6 +1,5 @@
 .selectClass-container {
     display: flex;
-    width: 60px;
     padding: 12px;
     justify-content: space-between;
     align-items: center;
@@ -38,4 +37,20 @@
 
 .CheckboxComponent-container {
     margin-top: 12px;
+}
+
+
+
+.selectedClass-block{
+    display: flex;
+    align-items: center;
+}
+
+.selectedClass-block  .input-container{
+    gap: 0;
+}
+
+.input4{
+    display: flex;
+    gap: 0;
 }

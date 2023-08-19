@@ -44,3 +44,4 @@ export function getWorksExperience(works) {
 
   return `+${experienceInYears} ${plural(experienceInYears, declension)}`;
 }
+
