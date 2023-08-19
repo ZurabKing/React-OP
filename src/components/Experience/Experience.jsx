@@ -2,6 +2,7 @@ import React from "react";
 import "./Experience.scss";
 import Input from "../../ui-component/Input/Input";
 import { DatePicker } from "../../ui-component/DatePicker/DatePicker";
+import InputDate from "../../ui-component/InputDate/InputDate";
 
 export default function Education({ index }) {
   const [selectedOption, setSelectedOption] = React.useState("");
@@ -29,7 +30,17 @@ export default function Education({ index }) {
         />
       </div>
       <div className="datePickers-block1">
-        <DatePicker
+        <InputDate
+          title="Дата начала работы"
+          name={`works[${index}][from]`}
+          onChange={(date) => setStartDate(date)}
+        />
+        <InputDate
+          title="Дата увольнения"
+          name={`works[${index}][to]`}
+          onChange={(date) => setStartDate(date)}
+        />
+        {/* <DatePicker
           className="input2"
           title="Дата начала работы"
           name={`works[${index}][from]`}
@@ -42,7 +53,7 @@ export default function Education({ index }) {
           title="Дата увольнения"
           selected={startDate1}
           onChange={(date) => setStartDate1(date)}
-        />
+        /> */}
       </div>
     </div>
   );

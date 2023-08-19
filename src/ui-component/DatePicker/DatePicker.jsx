@@ -5,30 +5,28 @@ import "./DatePicker.scss";
 import { RiCalendarLine } from "react-icons/ri";
 registerLocale("ru", ru);
 
-
 const DateInput = ({ value, onChange }) => {
   return (
     <div>
       <input
-        className="input-datePiker"
         value={value}
+        className="input-datePiker"
         onChange={(e) => onChange(e.target.value)}
       />
     </div>
   );
 };
-
 export const DatePicker = ({ ...props }) => {
+  console.log(props.placeholder);
   return (
     <div>
       <h4 className="date-title">{props.title}</h4>
       <div className="datepicker-container">
-  
         <DatePickerUI
           {...props}
           locale="ru"
           dateFormat="dd.MM.yyyy"
-          customTimeInput={<DateInput />}
+          customTimeInput={<DateInput placeholder={props.placeholder} />}
         />
         <span className="calendar-icon">
           <RiCalendarLine />

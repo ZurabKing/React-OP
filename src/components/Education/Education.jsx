@@ -3,6 +3,7 @@ import "./Education.scss";
 import Input from "../../ui-component/Input/Input";
 import { DatePicker } from "../../ui-component/DatePicker/DatePicker";
 import AddScanComponent from "../AddTeacher/AddScan/AddScan";
+import InputDate from "../../ui-component/InputDate/InputDate";
 
 export default function Education({ index }) {
   const [startDate, setStartDate] = React.useState(new Date());
@@ -31,12 +32,20 @@ export default function Education({ index }) {
             className="select-container"
             name={`education[${index}][type]`}
           >
-            <option value="среднее образование">среднее образование</option>
+            <option value="среднее образование">
+              среднее профессиональное образование;
+            </option>
             <option value="высшее образование - бакалавриат">
-              высшее образование - бакалавриат
+              высшее образование - бакалавриат;
             </option>
             <option value="высшее образование - специалитет, магистратура">
-              высшее образование - специалитет, магистратура
+              высшее образование - специалитет, магистратура;
+            </option>
+            <option value="высшее образование - аспирантура;">
+              высшее образование - аспирантура;
+            </option>
+            <option value="высшее образование - аспирантура;">
+              высшее образование - докторантура;
             </option>
             {/* <option value="высшее образование - подготовка кадров высшей квалификации">
               высшее образование - подготовка кадров высшей квалификации
@@ -53,22 +62,32 @@ export default function Education({ index }) {
         />
       </div>
       <div className="datePickers-block">
-        <DatePicker
+        <InputDate
+          title="Дата начала обучения"
+          name={`education[${index}][from]`}
+          onChange={(date) => setStartDate(date)}
+        />
+        <InputDate
+          title="Дата окончания обучения"
+          name={`education[${index}][to]`}
+          onChange={(date) => setStartDate(date)}
+        />
+        {/* <DatePicker
           className="input2"
           title="Дата начала обучения"
           name={`education[${index}][from]`}
           selected={startDate}
           onChange={(date) => setStartDate(date)}
           popperPlacement="top-start"
-        />
-        <DatePicker
+        /> */}
+        {/* <DatePicker
           className="input2"
           title="Дата окончания обучения"
           name={`education[${index}][to]`}
           selected={startDate1}
           onChange={(date) => setStartDate1(date)}
           popperPlacement="top-start"
-        />
+        /> */}
       </div>
       <div className="diplom-container">
         <AddScanComponent

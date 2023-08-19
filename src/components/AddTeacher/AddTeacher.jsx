@@ -13,9 +13,11 @@ import "./AddTeacher.scss";
 import Contact from "../Contact/Contact";
 import { Api } from "../../api";
 import { useNavigate } from "react-router-dom";
+import MultiSelected from "../../ui-component/MultiSelected/MultiSelected";
+import InputDate from "../../ui-component/InputDate/InputDate";
 
 export function AddTeacher() {
-  const [startDate, setStartDate] = React.useState(new Date());
+  const [startDate, setStartDate] = React.useState();
   const [educations, setEducations] = React.useState([true]);
   const [educations1, setEducations1] = React.useState([true]);
   const formRef = useRef(null);
@@ -71,6 +73,10 @@ export function AddTeacher() {
     }
   };
 
+  const handleDateChange = (event) => {
+    setStartDate(event.target.value);
+  };
+
   return (
     <form ref={formRef}>
       <div>
@@ -115,14 +121,39 @@ export function AddTeacher() {
           />
         </div>
         <div className="data-container">
-          <DatePicker
+          <div className="Multi-input-container">
+            <InputDate
+              placeholder={"Дата рождения"}
+              title={"Дата рождения"}
+              name="born"
+              value={startDate}
+              onChange={handleDateChange}
+            />
+            {/* <DatePicker
+            placeholderText="Дата рождения"
             className="picker__input"
             name="born"
             title="Дата рождения"
+            // withPortal
             selected={startDate}
             onChange={(date) => setStartDate(date)}
+          /> */}
+            {/* <DatePicker
+            selected={startDate}
+            placeholderText="Click to select a date"x
+            onChange={(date) => setStartDate(date)}
+            
+          /> */}
+            <MultiSelected name='discipline[]' />
+            {/* <Selected title="Предмет преподавания" /> */}
+          </div>
+
+          <Input
+            className="input2"
+            name='subdiscipline'
+            title={"Предмет дополнительного образования(внеурочные занятия)"}
+            placeholder="Введите доп. предмет"
           />
-          <Selected title="Предмет преподавания" />
         </div>
         <SelectedClass />
         <div className="AddTeacher-container">

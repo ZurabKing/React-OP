@@ -26,6 +26,7 @@ function fetchTeachers() {
 }
 
 const columns = [
+  { id: 0, title: "№" },
   { id: 1, title: "ФИО" },
   { id: 2, title: "Предмет" },
   { id: 3, title: "Возраст" },
@@ -77,8 +78,8 @@ export default function Table() {
             </tr>
           </thead>
           <tbody>
-            {teachers.map((cell) => (
-              <TableCell key={cell.id} {...cell} />
+            {teachers.map((cell, index) => (
+              <TableCell key={cell.id} index={index} {...cell} />
             ))}
           </tbody>
         </table>
