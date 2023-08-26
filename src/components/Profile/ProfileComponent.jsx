@@ -5,6 +5,7 @@ import { Api } from "../../api";
 import { RegistrationContext } from "../../context";
 import { RiCalendarLine } from "react-icons/ri";
 import DiplomScan from "../../assets/img/Diplom.png";
+import { errorNotification } from "../../utils/errorNotification";
 
 export const ProfileComponent = () => {
   const { id } = useParams();
@@ -19,9 +20,11 @@ export const ProfileComponent = () => {
       const data = await Api.teachers.getTeacherProfile(id);
       setProfile(data);
     } catch (error) {
-      alert(error);
+      errorNotification(error)
     }
   };
+
+  
 
   React.useEffect(() => {
     if (id) {
@@ -88,7 +91,9 @@ export const ProfileComponent = () => {
                 </div>
                 {item?.scan && (
                   <div className="education-level-scan">
-                    <img src={item?.scan} alt="Scan" />
+                    <a download href={item?.scan}>
+                      Скачать скан
+                    </a>
                   </div>
                 )}
               </div>

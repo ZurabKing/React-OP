@@ -1,7 +1,10 @@
 import React from "react";
-import './InputDate.scss'
+import "./InputDate.scss";
 
 export default function InputDate({
+  children,
+  style,
+  required,
   name,
   placeholder,
   value,
@@ -10,8 +13,18 @@ export default function InputDate({
 }) {
   return (
     <div>
-      <h4 className="date-title">{title}</h4>
+      <div
+        style={{
+          display: "flex",
+          gap: "5px",
+        }}
+      >
+        <h4 className="date-title">{title}</h4>
+        <span>{children}</span>
+      </div>
       <input
+        style={style}
+        required={required}
         className="input-date"
         type="date"
         name={name}

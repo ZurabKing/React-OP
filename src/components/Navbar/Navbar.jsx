@@ -3,8 +3,25 @@ import "../../components/Navbar/Navbar.scss";
 import Logo from "../../assets/Navbar/Logo.png";
 import { Link, useLocation } from "react-router-dom";
 import { routes } from "../../constants/routes";
+import graduationCap from "../../assets/icons/graduation-cap.svg";
 
 export default function Navbar() {
+  const [modalIsOpen, setModalIsOpen] = React.useState(false);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
+  const handleOverlayClick = (event) => {
+    if (event.target.classList.contains("modal-overlay")) {
+      closeModal();
+    }
+  };
+
   const { pathname } = useLocation();
 
   const active = "active-sidebarContainer-link sidebarContainer-link";
@@ -26,6 +43,10 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="sidebarContainer">
+          <div className={isTeacherClassNames}>
+            <img src={graduationCap} alt="cap" />
+            Штат
+          </div>
           <Link to={routes.teacher} className={isTeacherClassNames}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -86,18 +107,37 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* <div className="sidebar-info">
-        <a href="!#" className="sidebarInfo-link">
+      <div className="sidebar-info">
+        <span onClick={openModal} className="sidebarInfo-span">
+          Служба поддержки
+        </span>
+        {modalIsOpen && (
+          <div onClick={handleOverlayClick} className="modal-overlay">
+            <div className="modal">
+              <span className="close" onClick={closeModal}>
+                &times;
+              </span>
+              <h2>У Вас возникли проблемы?</h2>
+              <div>
+                <h4>Свяжитесь с нами</h4>
+                <p>Сотовый: +7 (918) 813-13-11</p>
+                <p>Whatsapp: +7 (918) 813-13-11</p>
+                <p>Telegram: @z404Admin</p>
+              </div>
+            </div>
+          </div>
+        )}
+        {/* <a href="!#" className="sidebarInfo-link">
           Правила сайта
-        </a>
-        <a href="!#" className="sidebarInfo-link">
+        </a> */}
+        {/* <a href="!#" className="sidebarInfo-link">
           Политика конфиденциальности
         </a>
         <span className="sidebarInfo-span">
           © 2021-2023 LLC «AIS». <br />
           Все права защищены.
-        </span>
-      </div> */}
+        </span> */}
+      </div>
     </div>
   );
 }

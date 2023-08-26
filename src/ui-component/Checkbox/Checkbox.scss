@@ -4,11 +4,13 @@ input {
 
 .checkbox-container {
   display: flex;
-  align-items: center;
-  gap: 25px;
+  flex-direction: column;
+  gap: 16px;
+
   margin-top: 12px;
 
   label {
+    width: max-content;
     display: flex;
     align-items: center;
     gap: 8px;

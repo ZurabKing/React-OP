@@ -1,6 +1,5 @@
 .navbarContainer {
   background-color: black;
-  position: relative;
   display: flex;
   width: 252px;
   height: 100vh;
@@ -55,7 +54,7 @@
 }
 
 .sidebar-info {
-  margin-bottom: 10px;
+  margin-bottom: 90px;
   position: absolute;
   bottom: 0;
   display: flex;
@@ -63,7 +62,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 12px;
   align-self: stretch;
 
   .sidebarInfo-link {
@@ -75,14 +73,85 @@
     font-weight: 400;
     line-height: 100%;
   }
+}
 
-  .sidebarInfo-span {
-    margin-top: 12px;
-    color: var(--neutral-400, #5c5c5c);
+.sidebarInfo-span {
+  letter-spacing: 1px;
+  cursor: pointer;
+  width: 100%;
+  color: white;
+  font-family: Nunito Sans;
+  font-size: 12px;
+  font-style: bold;
+  font-weight: 400;
+  line-height: 140%;
+}
+.modal-overlay {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 5px;
+  padding: 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  h2 {
+    color: var(--bw-900-b, #000);
     font-family: Nunito Sans;
-    font-size: 12px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+  }
+
+  p {
+    color: var(--bw-900-b, #000);
+    font-family: Nunito Sans;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    line-height: 140%;
+    line-height: 100%;
   }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    h4 {
+      color: var(--bw-900-b, #000);
+      font-family: Nunito Sans;
+      letter-spacing: 0.5px;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 100%;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
 }

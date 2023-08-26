@@ -8,21 +8,22 @@ import { TableCell } from "./TableCell";
 import { RegistrationContext } from "../../context";
 import { Link } from "react-router-dom";
 import loading from "../../assets/img/loader.gif";
+import axios from "axios";
 
-function fetchWrapper(endpoint, options = {}) {
-  const { headers, otherOptions } = options;
+// function fetchWrapper(endpoint, options = {}) {
+//   const { headers, otherOptions } = options;
 
-  return fetch(`http://data.kod06.ru/api/${endpoint}`, {
-    headers: {
-      Authorization: "Bearer 1142|2aqOXJWyWP9T253BEQ3ks7quV8kL2DCb0TWc1Oi4",
-      ...headers,
-    },
-    ...otherOptions,
-  });
-}
+//   return fetch(`http://data.kod06.ru/api/${endpoint}`, {
+//     headers: {
+//       Authorization: "Bearer 1142|2aqOXJWyWP9T253BEQ3ks7quV8kL2DCb0TWc1Oi4",
+//       ...headers,
+//     },
+//     ...otherOptions,
+//   });
+// }
 
 function fetchTeachers() {
-  return fetchWrapper("teachers");
+  return axios.get("https://teacher06.ru/api/teachers");
 }
 
 const columns = [
@@ -39,14 +40,14 @@ export default function Table() {
   const [isLoading, setIsLoading] = React.useState(false);
   const { user } = React.useContext(RegistrationContext);
 
+
   React.useEffect(() => {
     setIsLoading(true);
-    fetchTeachers()
-      .then((resp) => resp.json())
-      .then((json) => {
-        setTeachers(json);
-        setIsLoading(false);
-      });
+    fetchTeachers().then(({data}) => {
+      console.log(data)
+      setTeachers(data);
+      setIsLoading(false);
+    });
   }, []);
 
   if (!user?.user) {
@@ -93,9 +94,9 @@ export default function Table() {
         <div className="schoolInfo-block">
           <h4 className="schoolInfo-title">{user?.user?.nickname}</h4>
           <span className="schoolInfo-title-span">{user?.user?.city}</span>
-          <span className="schoolInfo-title-span">
+          {/* <span className="schoolInfo-title-span">
             Основана в {user?.user?.born} году
-          </span>
+          </span> */}
           <div className="schoolInfo-teacherBlock">
             <div className="schoolInfo-teachers">
               <img src={Book} alt="" />

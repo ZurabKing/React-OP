@@ -91,7 +91,8 @@
     .education-level-block {
       display: flex;
       gap: 44px;
-      align-items: center;
+      align-items: flex-end;
+      
 
       .education-level-info {
         display: flex;

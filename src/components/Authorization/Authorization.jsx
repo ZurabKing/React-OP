@@ -15,6 +15,8 @@ import close from "../../assets/icons/close.svg";
 import PrivacyPolicy from "./PrivacyPolicy/PrivacyPolicy";
 import { RegistrationContext } from "../../context";
 import { Api } from "../../api";
+import WhiteLogo from "../../assets/icons/logo-white.svg";
+import { errorNotification } from "../../utils/errorNotification";
 
 const Authorization = () => {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -23,6 +25,21 @@ const Authorization = () => {
     email: "",
     password: "",
   });
+  const [modalIsOpen, setModalIsOpen] = React.useState(false);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
+  const handleOverlayClick = (event) => {
+    if (event.target.classList.contains("modal-overlay-navbar")) {
+      closeModal();
+    }
+  };
 
   const modal = React.useRef(null);
 
@@ -55,7 +72,7 @@ const Authorization = () => {
       localStorage.setItem("token", token);
       setIsAuth(true);
     } catch (error) {
-      alert(error);
+      errorNotification(error);
     }
   };
 
@@ -66,9 +83,16 @@ const Authorization = () => {
   return (
     <div className="authorization">
       <img src={authorizationImg} className="authorization_img" alt="img" />
+      <img
+        className="authorization_img-logo"
+        width={144}
+        height={44}
+        src={WhiteLogo}
+        alt="121"
+      />
 
       <div className="authorization-block">
-        <h2>Вход в Аккаунт</h2>
+        <h2 className="authorization-block-title">Вход в Аккаунт</h2>
         <form
           onSubmit={(e) => formSubmitHandler(e)}
           className="authorization-form"
@@ -106,10 +130,31 @@ const Authorization = () => {
             <label htmlFor="checkbox">
               <input id="checkbox" type="checkbox" />
               <span></span>
-              Запомнить меня
+              <p className="checkbox-text">Запомнить меня</p>
             </label>
-            <Link to="/forgot-password" className="forgot-password">
-              Забыли пароль?
+            <Link className="forgot-password">
+              <span onClick={openModal} className="sidebarInfo-span-auth">
+                Забыли пароль?
+              </span>
+              {modalIsOpen && (
+                <div
+                  onClick={handleOverlayClick}
+                  className="modal-overlay-navbar"
+                >
+                  <div className="modal-navbar">
+                    <span className="close" onClick={closeModal}>
+                      &times;
+                    </span>
+                    <h2>У Вас возникли проблемы?</h2>
+                    <div>
+                      <h4>Свяжитесь с нами</h4>
+                      <p>Сотовый: +7 (918) 813-13-11</p>
+                      <p>Whatsapp: +7 (918) 813-13-11</p>
+                      <p>Telegram: @z404Admin</p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </Link>
           </div>
           <Button onClick={logIn} buttonColor="black">
