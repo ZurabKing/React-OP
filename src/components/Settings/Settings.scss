@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.form-container {
+    width: 720px;
+    padding: 40px;
+    border-radius: 12px;
+    background: var(--bw-900-w, #fff);
+
+    .input-name-scholl-container {
+        margin-top: 24px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .input-adress-data-container {
+        margin-top: 24px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .settings-moderator-container {
+        margin-top: 32px;
+
+        .settings-moderator {
+            color: #000;
+            font-family: Nunito Sans;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 100%;
+        }
+        .input-full-name-container {
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+    }
+
+    .contacts-container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 32px;
+
+        .contacts-title {
+            color: #000;
+            font-family: Nunito Sans;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 100%; 
+        }
+
+        .contacts-input-number-container{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+
+    }
+}

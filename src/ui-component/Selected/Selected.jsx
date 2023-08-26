@@ -14,7 +14,6 @@ export function Selected({ title }) {
       <select
         multiple
         className="select-container"
-        name="discipline"
         value={selectedOption}
         onChange={handleOptionChange}
       >

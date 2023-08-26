@@ -1,13 +1,12 @@
 import React from "react";
-import "./Education.scss";
 import Input from "../../ui-component/Input/Input";
-import { DatePicker } from "../../ui-component/DatePicker/DatePicker";
 import AddScanComponent from "../AddTeacher/AddScan/AddScan";
 import InputDate from "../../ui-component/InputDate/InputDate";
+import Remove from "../../assets/icons/remove.svg";
+import "./Education.scss";
 
-export default function Education({ index }) {
+export default function Education({ index, onRemoveEducation }) {
   const [startDate, setStartDate] = React.useState(new Date());
-  const [startDate1, setStartDate1] = React.useState(new Date());
 
   const [selectedImage, setSelectedImage] = React.useState(null);
   const [imageName, setImageName] = React.useState("");
@@ -44,12 +43,6 @@ export default function Education({ index }) {
             <option value="высшее образование - аспирантура;">
               высшее образование - аспирантура;
             </option>
-            <option value="высшее образование - аспирантура;">
-              высшее образование - докторантура;
-            </option>
-            {/* <option value="высшее образование - подготовка кадров высшей квалификации">
-              высшее образование - подготовка кадров высшей квалификации
-            </option> */}
           </select>
         </div>
 
@@ -72,41 +65,45 @@ export default function Education({ index }) {
           name={`education[${index}][to]`}
           onChange={(date) => setStartDate(date)}
         />
-        {/* <DatePicker
-          className="input2"
-          title="Дата начала обучения"
-          name={`education[${index}][from]`}
-          selected={startDate}
-          onChange={(date) => setStartDate(date)}
-          popperPlacement="top-start"
-        /> */}
-        {/* <DatePicker
-          className="input2"
-          title="Дата окончания обучения"
-          name={`education[${index}][to]`}
-          selected={startDate1}
-          onChange={(date) => setStartDate1(date)}
-          popperPlacement="top-start"
-        /> */}
       </div>
-      <div className="diplom-container">
-        <AddScanComponent
-          input={
-            <input
-              style={{ display: "none" }}
-              type="file"
-              name={`education[${index}][scan]`}
-              id={`education[${index}][scan]`}
-              onChange={handleImageChange}
-            />
-          }
-          index={index}
-          selectedImage={selectedImage}
-          setSelectedImage={setSelectedImage}
-          imageName={imageName}
-          setImageName={setImageName}
-          fileInputRef={fileInputRef}
-        />
+      <div
+        style={{
+          display: "flex",
+          alignItems: "end",
+          justifyContent: "space-between",
+        }}
+      >
+        <div className="diplom-container">
+          <AddScanComponent
+            input={
+              <input
+                style={{ display: "none" }}
+                type="file"
+                name={`education[${index}][scan]`}
+                id={`education[${index}][scan]`}
+                onChange={handleImageChange}
+              />
+            }
+            index={index}
+            selectedImage={selectedImage}
+            setSelectedImage={setSelectedImage}
+            imageName={imageName}
+            setImageName={setImageName}
+            fileInputRef={fileInputRef}
+          />
+        </div>
+        {index !== 0 && (
+          <div>
+            <button style={{ border: " none", backgroundColor: "transparent" }}>
+              <img
+                className="images-remove"
+                src={Remove}
+                onClick={onRemoveEducation}
+                alt="Удалить"
+              />
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

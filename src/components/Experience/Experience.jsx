@@ -1,10 +1,10 @@
 import React from "react";
 import "./Experience.scss";
 import Input from "../../ui-component/Input/Input";
-import { DatePicker } from "../../ui-component/DatePicker/DatePicker";
 import InputDate from "../../ui-component/InputDate/InputDate";
+import Remove from "../../assets/icons/remove.svg";
 
-export default function Education({ index }) {
+export default function Education({ index, onRemoveExperience }) {
   const [selectedOption, setSelectedOption] = React.useState("");
   const [startDate, setStartDate] = React.useState(new Date());
   const [startDate1, setStartDate1] = React.useState(new Date());
@@ -15,7 +15,6 @@ export default function Education({ index }) {
   return (
     <div>
       <div className="Selected-app-block">
-        <div className="Selected-app"></div>
         <Input
           className={"input2"}
           name={`works[${index}][work]`}
@@ -40,21 +39,21 @@ export default function Education({ index }) {
           name={`works[${index}][to]`}
           onChange={(date) => setStartDate(date)}
         />
-        {/* <DatePicker
-          className="input2"
-          title="Дата начала работы"
-          name={`works[${index}][from]`}
-          selected={startDate}
-          onChange={(date) => setStartDate(date)}
-        />
-        <DatePicker
-          className="input2"
-          name={`works[${index}][to]`}
-          title="Дата увольнения"
-          selected={startDate1}
-          onChange={(date) => setStartDate1(date)}
-        /> */}
       </div>
+      {index !== 0 && (
+        <div
+          style={{ display: "flex", justifyContent: "end", marginTop: "40px" }}
+        >
+          <button style={{ border: " none", backgroundColor: "transparent" }}>
+            <img
+              className="images-remove"
+              src={Remove}
+              onClick={onRemoveExperience}
+              alt="Удалить"
+            />
+          </button>
+        </div>
+      )}
     </div>
   );
 }

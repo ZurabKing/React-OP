@@ -2,6 +2,7 @@ import React from "react";
 import "./TeacherButton.scss";
 
 export default function TeacherButton({
+  containerProps,
   onClick,
   backcolor,
   color,
@@ -9,10 +10,10 @@ export default function TeacherButton({
   width,
 }) {
   return (
-    <div>
+    <div {...containerProps}>
       <button
-        className="teacher-btn"
         width={width}
+        className="teacher-btn"
         onClick={onClick}
         style={{ backgroundColor: backcolor, color: color }}
       >

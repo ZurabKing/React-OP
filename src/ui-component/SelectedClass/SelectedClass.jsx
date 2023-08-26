@@ -17,32 +17,37 @@ export function SelectedClass({ classNumber, classLatter }) {
 
   return (
     <div className="App">
-      <h4 className="selectedClass__title">Классный руководитель?</h4>
       <div className="CheckboxComponent-container">
-        <CheckboxComponent text={"Да"}>
+        <CheckboxComponent isChecked={true} text={"Классный руководитель"}>
           <div className="selectedClass-block">
-            <select
-              className="selectClass-container"
-              value={selectedOption}
-              name="class"
-              onChange={handleOptionChange}
-            >
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-            </select>
-            {selectedOption && undefined}
-
-            <Input className='input2 input4' name="liter" placeholder='Литтер'/>
-            {/* <select
+            <h4 className="select-text-checkbox">Классный руководитель</h4>
+            <div className="select-checkbox-block">
+              <select
+                className="selectClass-container"
+                value={selectedOption}
+                name="class"
+                onChange={handleOptionChange}
+              >
+                <option value="1">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+              </select>
+              {selectedOption && undefined}
+              <Input
+                className="input2 input4"
+                name="liter"
+                placeholder="Литера"
+              />
+              {/* <select
               className="selectClass-container"
               value={selectedOption1}
               onChange={handleOptionChange1}
@@ -55,6 +60,7 @@ export function SelectedClass({ classNumber, classLatter }) {
               <option value="Д">Д</option>
             </select>
             {selectedOption && undefined} */}
+            </div>
           </div>
         </CheckboxComponent>
       </div>

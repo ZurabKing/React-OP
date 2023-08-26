@@ -1,11 +1,36 @@
 import React from "react";
 import SelectComponent from "react-select";
-import Autocomplete from '@mui/material/Autocomplete';
+import Autocomplete from "@mui/material/Autocomplete";
 import "./MultiSelected.scss";
 import { TextField } from "@mui/material";
+import axios from "axios";
 
-export default function MultiSelected({name}) {
-  const [value, setValue] = React.useState('')
+export default function MultiSelected({
+  selectedValues,
+  setSelectedValues,
+  name,
+}) {
+  const [disciplines, setDisciplines] = React.useState([]);
+
+  React.useEffect(() => {
+    axios
+      .get(`https://teacher06.ru/api/${disciplines}`)
+      .then((response) => {
+        // Обновляем состояние компонента данными из ответа
+        setDisciplines(response.disciplines);
+      })
+      .catch((error) => {
+        console.error("Ошибка при запросе к API:", error);
+      });
+  }, []);
+
+  console.log(disciplines);
+  // const backendSubjects = [
+  //   { id: 1, name: "Mathematics" },
+  //   { id: 2, name: "Science" },
+  //   { id: 3, name: "History" },
+  //   // ... другие предметы
+  // ];
   const options = [
     { value: "русский язык", label: "Русский язык" },
     { value: "литература", label: "Литература" },
@@ -34,33 +59,34 @@ export default function MultiSelected({name}) {
     console.log("HandleChange", selectedOption);
   };
 
+  const InputStyle = {
+    width: "314px",
+    backgroundColor: "var(--neutral-100, #F9F9F9)",
+    borderRadius: "8px",
+    fontFamily: "Nunito Sans",
+    fontSize: "16px",
+    color: "var(--neutral-400, #5C5C5C)",
+    borderRadius: "4px",
+    outline: "none",
+  };
+
+  const handleAutocompleteChange = (_, newValue) => {
+    setSelectedValues(newValue);
+  };
+
   return (
     <div className="multiSel-container">
       <h4 className="">Предмет преподавания</h4>
-      {/* <SelectComponent
-       classNames={{
-        control: (state) => 'border-none'
-       }}
-      styles={"multiSelect"}
-      className="multiSelect-container"
-      classNamePrefix={'multiSelect'}
-      placeholder="Выберите предмет..."
-      options={options}
-      onChange={handleChange}
-      isMulti
-    /> */}
       <Autocomplete
         multiple
+        style={InputStyle}
         id="tags-outlined"
         options={options}
         filterSelectedOptions
+        classes={{ root: "root" }}
+        onChange={handleAutocompleteChange}
         renderInput={(params) => (
-          <TextField
-            {...params}
-            name={name}
-            value={value}
-            placeholder="Выберите предмет"
-          />
+          <TextField {...params} placeholder="Выберите предмет" />
         )}
       />
     </div>

@@ -3,11 +3,13 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import Authorization from "./components/Authorization/Authorization";
 import { RegistrationContext } from "./context";
 import React from "react";
-import { TeacherPage } from "./pages";
+import { SettingsPage, TeacherPage } from "./pages";
 import { routes } from "./constants/routes.js";
 import { ProfileComponent } from "./components/Profile/ProfileComponent.jsx";
 import { AddTeacher } from "./components/AddTeacher/AddTeacher.jsx";
 import { Api } from "./api/index.js";
+import { errorNotification } from "./utils/errorNotification.jsx";
+import Settings from "./components/Settings/Settings.jsx";
 
 function App() {
   const [isAuth, setIsAuth] = React.useState(localStorage.getItem("token"));
@@ -19,7 +21,7 @@ function App() {
       const data = await Api.auth.getProfile();
       setUser(data);
     } catch (error) {
-      alert(error);
+      errorNotification(error);
     }
   };
 
@@ -57,6 +59,8 @@ function App() {
           <Route path={routes.add} element={<AddTeacher />} />
           <Route path={routes.profile} element={<ProfileComponent />} />
         </Route>
+
+        <Route path={routes.settings} element={<SettingsPage/>}/>
 
         <Route path="*" element={<h1>404</h1>} />
       </Routes>
