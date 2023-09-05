@@ -18,17 +18,19 @@
   border-right: 1px solid var(--neutral-150, #f0f0f0);
   background: var(--bw-900-w, #fff);
   position: sticky;
-  bottom: 0;
+  top: 0; /* Фиксировать заголовок вверху при прокрутке */
+  background-color: #ffffff; /* Задайте цвет фона заголовка */
+  /* Задайте ширину каждого заголовка соответственно вашим столбцам данных */
 }
 
 .table-container {
-  width: calc(100vw - 710px);
+  width: calc(100vw - 340px);
   flex-grow: 1;
-  max-height: calc(100vh - 170px);
+  max-height: calc(100vh - 210px);
   overflow-y: auto;
   background-color: white;
-  padding: 12px;
   border-radius: 12px;
+  border: 1px solid var(--neutral-150, #f0f0f0);
 }
 
 .container__school {
@@ -43,6 +45,7 @@
 }
 
 .schoolCard-container {
+  width: 308px;
   background-color: white;
   border-radius: 12px;
   overflow: hidden;
@@ -65,6 +68,7 @@
     }
 
     .schoolInfo-title-span {
+      width: 308px;
       color: var(--neutral-400, #5c5c5c);
       font-family: Nunito Sans;
       font-size: 16px;
@@ -157,17 +161,28 @@
 .TableLink {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 7px;
   text-decoration: none;
   color: var(--neutral-400, #5c5c5c);
-
-  img {
-    width: 28px;
-    height: 28px;
-    border-radius: 28px;
-  }
 }
 
 .number-td {
   width: 50px;
+}
+
+.img-user-teacher {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+  thead {
+    position: sticky;
+    top: 0; /* Фиксировать заголовок вверху при прокрутке */
+    z-index: 1; /* Слой для показа над данными */
+  }
 }

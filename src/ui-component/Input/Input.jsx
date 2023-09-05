@@ -16,7 +16,7 @@ export default function Input({
 }) {
   return (
     <div className="input-container">
-      <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+      <div>
         <label className="input-text">{title}</label>
         <span>{children}</span>
       </div>

@@ -5,13 +5,7 @@ import "./MultiSelected.scss";
 import { TextField } from "@mui/material";
 import axios from "axios";
 
-export default function MultiSelected({
-  selectedValues,
-  setSelectedValues,
-  name,
-}) {
-  const [disciplines, setDisciplines] = React.useState([]);
-
+export default function MultiSelected({ disciplines, setDisciplines, name }) {
   React.useEffect(() => {
     axios
       .get(`https://teacher06.ru/api/${disciplines}`)
@@ -24,14 +18,8 @@ export default function MultiSelected({
       });
   }, []);
 
-  console.log(disciplines);
-  // const backendSubjects = [
-  //   { id: 1, name: "Mathematics" },
-  //   { id: 2, name: "Science" },
-  //   { id: 3, name: "History" },
-  //   // ... другие предметы
-  // ];
   const options = [
+    { value: "Начальные классы", label: "Начальные классы" },
     { value: "русский язык", label: "Русский язык" },
     { value: "литература", label: "Литература" },
     { value: "родной язык", label: "Родной язык" },
@@ -47,7 +35,7 @@ export default function MultiSelected({
     { value: "физика", label: "Физика" },
     { value: "химия", label: "Химия" },
     { value: "биология", label: "Биология" },
-    { value: "история религий", label: "История религий" },
+    { value: "история религии", label: "История религии" },
     { value: "изобразительное искусство", label: "Изобразительное искусство" },
     { value: "музыка", label: "Музыка" },
     { value: "технология", label: "Технология" },
@@ -55,12 +43,7 @@ export default function MultiSelected({
     { value: "ОБЖ", label: "ОБЖ" },
   ];
 
-  const handleChange = (selectedOption) => {
-    console.log("HandleChange", selectedOption);
-  };
-
   const InputStyle = {
-    width: "314px",
     backgroundColor: "var(--neutral-100, #F9F9F9)",
     borderRadius: "8px",
     fontFamily: "Nunito Sans",
@@ -71,7 +54,7 @@ export default function MultiSelected({
   };
 
   const handleAutocompleteChange = (_, newValue) => {
-    setSelectedValues(newValue);
+    setDisciplines(newValue.map((option) => option.value));
   };
 
   return (

@@ -3,7 +3,6 @@ import "../../components/Navbar/Navbar.scss";
 import Logo from "../../assets/Navbar/Logo.png";
 import { Link, useLocation } from "react-router-dom";
 import { routes } from "../../constants/routes";
-import graduationCap from "../../assets/icons/graduation-cap.svg";
 
 export default function Navbar() {
   const [modalIsOpen, setModalIsOpen] = React.useState(false);
@@ -34,6 +33,10 @@ export default function Navbar() {
     ? active
     : "sidebarContainer-link";
 
+  const isStateClassNames = pathname.includes("state")
+    ? active
+    : "sidebarContainer-link";
+
   return (
     <div className="navbarContainer">
       <div>
@@ -43,11 +46,42 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="sidebarContainer">
-          <div className={isTeacherClassNames}>
-            <img src={graduationCap} alt="cap" />
-            Штат
+          <div>
+            <Link to={routes.state} className={isStateClassNames}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M14 19C14 17.4087 13.3679 15.8826 12.2426 14.7574C11.1174 13.6321 9.5913 13 8 13C6.4087 13 4.88258 13.6321 3.75736 14.7574C2.63214 15.8826 2 17.4087 2 19"
+                  stroke="#B7B7B7"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M8 13C10.2091 13 12 11.2091 12 9C12 6.79086 10.2091 5 8 5C5.79086 5 4 6.79086 4 9C4 11.2091 5.79086 13 8 13Z"
+                  stroke="#B7B7B7"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M22 19C22 17.4087 21.3679 15.8826 20.2426 14.7574C19.1174 13.6321 17.5913 13 16 13C17.0609 13 18.0783 12.5786 18.8284 11.8284C19.5786 11.0783 20 10.0609 20 9C20 7.93913 19.5786 6.92172 18.8284 6.17157C18.0783 5.42143 17.0609 5 16 5"
+                  stroke="#B7B7B7"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              Штат
+            </Link>
           </div>
-          <Link to={routes.teacher} className={isTeacherClassNames}>
+
+          {/* <Link to={routes.teacher} className={isTeacherClassNames}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -78,7 +112,7 @@ export default function Navbar() {
               />
             </svg>
             Учителя
-          </Link>
+          </Link> */}
           {/* <Link to={"/"} className={isStudentClassNames}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +146,7 @@ export default function Navbar() {
           Служба поддержки
         </span>
         {modalIsOpen && (
-          <div onClick={handleOverlayClick} className="modal-overlay">
+          <div className="modal-overlay" onClick={closeModal}>
             <div className="modal">
               <span className="close" onClick={closeModal}>
                 &times;
@@ -120,9 +154,9 @@ export default function Navbar() {
               <h2>У Вас возникли проблемы?</h2>
               <div>
                 <h4>Свяжитесь с нами</h4>
-                <p>Сотовый: +7 (918) 813-13-11</p>
-                <p>Whatsapp: +7 (918) 813-13-11</p>
-                <p>Telegram: @z404Admin</p>
+                <p>Сотовый: +7 (928) 939-06-06</p>
+                <p>Whatsapp: +7 (928) 939-06-06</p>
+                <p>Telegram: @pinfosys</p>
               </div>
             </div>
           </div>

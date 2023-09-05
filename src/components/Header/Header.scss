@@ -10,6 +10,7 @@
   margin-right: 0;
 
   .headerTitle {
+    white-space: nowrap;
     color: var(--bw-900-w, #fff);
     font-family: Nunito Sans;
     font-size: 24px;
@@ -26,7 +27,8 @@
     gap: 12px;
 
     .headerSchool__number {
-      width: 300px;
+      width: 380px;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: center;

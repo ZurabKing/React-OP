@@ -17,7 +17,6 @@ const DateInput = ({ value, onChange }) => {
   );
 };
 export const DatePicker = ({ ...props }) => {
-  console.log(props.placeholder);
   return (
     <div>
       <h4 className="date-title">{props.title}</h4>

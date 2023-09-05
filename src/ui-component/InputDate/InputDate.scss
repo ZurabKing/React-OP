@@ -1,15 +1,37 @@
 .date-title {
-    color: var(--bw-900-b, #000);
-    font-family: Nunito Sans;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 100%;
+  color: var(--bw-900-b, #000);
+  font-family: Nunito Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
 }
 
 .input-date {
+  color: var(--neutral-400, #5c5c5c);
+  width: 294px;
+  display: flex;
+  padding: 12px;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  background: var(--neutral-100, #f9f9f9);
+  border: none;
+  outline: none;
+  font-family: Nunito Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%;
+
+  &::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    width: 20px;
+  }
+
+  .input-date-max {
     color: var(--neutral-400, #5c5c5c);
-    width: 294px;
+    width: 314px;
     display: flex;
     padding: 12px;
     align-items: center;
@@ -23,27 +45,17 @@
     font-style: normal;
     font-weight: 400;
     line-height: 125%;
+  }
+}
 
-    &::-webkit-calendar-picker-indicator {
-        cursor: pointer;
-        width: 20px;
-    }
+.data-container-create {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
 
-    .input-date-max {
-        color: var(--neutral-400, #5c5c5c);
-        width: 314px;
-        display: flex;
-        padding: 12px;
-        align-items: center;
-        gap: 12px;
-        border-radius: 8px;
-        background: var(--neutral-100, #f9f9f9);
-        border: none;
-        outline: none;
-        font-family: Nunito Sans;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 125%;
-    }
+.input-container-block {
+    width: max-content;
+  display: flex;
+  gap: 5px;
 }

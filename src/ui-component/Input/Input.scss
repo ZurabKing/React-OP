@@ -1,88 +1,90 @@
 .input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+
+  .input-text {
+    color: var(--bw-900-b, #000);
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+  }
+
+  .input {
+    cursor: default;
+    display: flex;
+    padding: 12px;
+    align-items: center;
+    gap: 12px;
+    border-radius: 8px;
+    background: var(--neutral-100, #f9f9f9);
+    border: none;
+    outline: none;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+  }
+  .input1 {
+    cursor: default;
+    width: 314px;
+    display: flex;
+    padding: 12px;
+    align-items: center;
+    gap: 12px;
+    border-radius: 8px;
+    background: var(--neutral-100, #f9f9f9);
+    border: none;
+    outline: none;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+  }
+  .input2 {
+    cursor: default;
+    width: 294px;
+    display: flex;
+    padding: 12px;
+    align-items: center;
+    gap: 12px;
+    border-radius: 8px;
+    background: var(--neutral-100, #f9f9f9);
+    border: none;
+    outline: none;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+  }
+
+  .input3 {
+    cursor: default;
+    white-space: nowrap;
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 12px;
+    align-items: center;
     gap: 12px;
-
-    .input-text {
-        color: var(--bw-900-b, #000);
-        font-family: Nunito Sans;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 100%;
-    }
-
-    .input {
-        display: flex;
-        padding: 12px;
-        align-items: center;
-        gap: 12px;
-        border-radius: 8px;
-        background: var(--neutral-100, #f9f9f9);
-        border: none;
-        outline: none;
-        font-family: Nunito Sans;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 125%;
-    }
-    .input1 {
-        width: 314px;
-        display: flex;
-        padding: 12px;
-        align-items: center;
-        gap: 12px;
-        border-radius: 8px;
-        background: var(--neutral-100, #f9f9f9);
-        border: none;
-        outline: none;
-        font-family: Nunito Sans;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 125%;
-    }
-    .input2 {
-        width: 294px;
-        display: flex;
-        padding: 12px;
-        align-items: center;
-        gap: 12px;
-        border-radius: 8px;
-        background: var(--neutral-100, #f9f9f9);
-        border: none;
-        outline: none;
-        font-family: Nunito Sans;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 125%;
-    }
-
-    .input3 {
-        white-space: nowrap;
-        width: 100%;
-        display: flex;
-        padding: 12px;
-        align-items: center;
-        gap: 12px;
-        border-radius: 8px;
-        background: var(--neutral-100, #f9f9f9);
-        border: none;
-        outline: none;
-        font-family: Nunito Sans;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 125%;
-    }
+    border-radius: 8px;
+    background: var(--neutral-100, #f9f9f9);
+    border: none;
+    outline: none;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+  }
 }
 
-
-
 .required-field {
-    border-color: red;
-  }
+  border-color: red;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Checkbox.scss";
 
-function CheckboxComponent({ children, text, handleClick, name }) {
+function CheckboxComponent({ children, text, handleClick, name, value }) {
   const [isChecked, setIsChecked] = React.useState(false);
 
   const handleCheckboxChange = () => {
@@ -12,7 +12,8 @@ function CheckboxComponent({ children, text, handleClick, name }) {
     <div className="checkbox-container">
       <label>
         <input
-        name={name}
+          value={value}
+          name={name}
           type="checkbox"
           checked={isChecked}
           onChange={() => {

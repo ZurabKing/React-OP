@@ -6,6 +6,7 @@ export const RoutesMap = {
   Teacher: "teacher",
   Settings: "settings",
   Profile: "profile",
+  State: "state",
 };
 
 export const routes = {
@@ -26,6 +27,9 @@ export const routes = {
 
   //Добавление
   add: `${RoutesMap.Add}`,
+
+  //Штат
+  state: `/${RoutesMap.State}`,
 
   // Профиль
   profile: `${RoutesMap.Profile}/:id`,

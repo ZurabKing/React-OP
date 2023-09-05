@@ -27,15 +27,15 @@ export default function Header() {
     }
 
     if (pathname.includes(routes.add)) {
-      return "Добавление учителя";
+      return "Добавление сотрудника";
     }
 
     if (pathname.includes("profile")) {
-      return "Профиль учителя";
+      return "Профиль сотрудника";
     }
 
-    if (pathname.includes('settings')) {
-      return "Настройки профиля"
+    if (pathname.includes("settings")) {
+      return "Настройки профиля";
     }
   };
 
@@ -63,17 +63,13 @@ export default function Header() {
       >
         <div className="headerSchool__number">
           <span className="headerSchool__number-span">
-            {user?.user?.nickname}
+            {user?.target?.shortname}
           </span>
           <span className="headerSchool__moder-span">
-            {user?.user?.director}
+            {user?.target?.director}
           </span>
         </div>
-        <img
-          src={user?.user?.profile_photo_path}
-          alt="avatar-school"
-          className="avatar"
-        />
+        <img src={user?.target?.photo} alt="avatar-school" className="avatar" />
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -93,7 +89,7 @@ export default function Header() {
           <div className="list-container">
             <ul className="btn-list">
               <li className="btn-item">
-                <Link style={{textDecoration:'none'}} to={routes.settings}>
+                <Link style={{ textDecoration: "none" }} to={routes.settings}>
                   <a href="!#" className="btn-link">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
