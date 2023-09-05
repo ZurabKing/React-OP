@@ -148,9 +148,9 @@ const Authorization = () => {
                     <h2>У Вас возникли проблемы?</h2>
                     <div>
                       <h4>Свяжитесь с нами</h4>
-                      <p>Сотовый: +7 (918) 813-13-11</p>
-                      <p>Whatsapp: +7 (918) 813-13-11</p>
-                      <p>Telegram: @z404Admin</p>
+                      <p>Сотовый: +7 (928) 939-06-06</p>
+                      <p>Whatsapp: +7 (928) 939-06-06</p>
+                      <p>Telegram: @pinfosys</p>
                     </div>
                   </div>
                 </div>

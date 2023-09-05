@@ -11,7 +11,9 @@ export default function SelectGroup({ disciplines, setDisciplines, required }) {
   };
 
   const renderSelectedComponent = () => {
-    if (selectedOption === "директор") {
+    if (selectedOption === "Выбрать") {
+      return null;
+    } else if (selectedOption === "директор") {
       return null;
     } else if (selectedOption === "заместитель директора") {
       return null;
@@ -20,6 +22,7 @@ export default function SelectGroup({ disciplines, setDisciplines, required }) {
     } else if (selectedOption === "учитель") {
       return (
         <FormTeacher
+          name="discipline"
           disciplines={disciplines}
           setDisciplines={setDisciplines}
         />
@@ -28,22 +31,23 @@ export default function SelectGroup({ disciplines, setDisciplines, required }) {
       return null;
     } else if (selectedOption === "сурдопедагог") {
       return null;
-    } else if (selectedOption === "педагоги-психологи") {
+    } else if (selectedOption === "педагог-психолог") {
       return null;
-    } else if (selectedOption === "воспитатели") {
+    } else if (selectedOption === "воспитатель") {
       return null;
-    } else if (selectedOption === "мастера производственного обучения") {
+    } else if (selectedOption === "мастер производственного обучения") {
       return null;
-    } else if (selectedOption === "тьюторы") {
+    } else if (selectedOption === "тьютор") {
       return null;
     } else if (selectedOption === "учебно-вспомогательный персонал") {
       return null;
     } else if (selectedOption === "Другое") {
       return (
         <Input
-          className="input2"
-          name="post"
-          placeholder={"Укажите должность"}
+          required
+          className={"input2"}
+          placeholder="Введите должность"
+          name="post_experience"
         />
       );
     }
@@ -51,31 +55,27 @@ export default function SelectGroup({ disciplines, setDisciplines, required }) {
   return (
     <div className="select-group-title-container">
       <div>
-        <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-          <h3>Должность</h3>
-          <span title="Это поле обязательно" style={{ color: "red" }}>
-            *
-          </span>
-        </div>
         <select
+          className="select-group"
           required={required}
-          name="post_type"
+          name="post_type[]"
           placeholder="Выберите должность"
           value={selectedOption}
           onChange={handleOptionChange}
         >
+          <option value="Выбрать">Выберите должность</option>
           <option value="директор">Директор</option>
           <option value="заместитель директора">Заместитель директора </option>
           <option value="руководитель филиала">Руководитель филиала </option>
           <option value="учитель">Учитель</option>
           <option value="тифлопедагог">Тифлопедагог</option>
           <option value="сурдопедагог">Сурдопедагог</option>
-          <option value="педагоги-психологи ">Педагоги-психологи </option>
-          <option value="воспитатели">Воспитатели</option>
-          <option value="мастера производственного обучения">
-            Мастера производственного обучения
+          <option value="педагог-психолог">Педагог-психолог</option>
+          <option value="воспитатель">Воспитатель</option>
+          <option value="мастер производственного обучения">
+            Мастер производственного обучения
           </option>
-          <option value="тьюторы">Тьюторы</option>
+          <option value="тьюторы">Тьютор</option>
           <option value="учебно-вспомогательный персонал">
             Учебно-вспомогательный персонал
           </option>

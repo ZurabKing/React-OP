@@ -58,16 +58,36 @@ export const Contact = () => {
           </Input>
         </div>
 
-        <Input
+        <div className="input-container">
+          <div style={{ display: "flex", gap: "5px" }}>
+            <label className="input-text">Whatsapp</label>
+            <span title="Это поле обязательно" style={{ color: "red" }}>
+              *
+            </span>
+          </div>
+
+          <InputMask
+            className={"input1"}
+            style={{ border: "none" }}
+            value={valueWats}
+            mask="+7 (999) 999-99-99"
+            name={"whatsapp"}
+            disabled={matches}
+            onChange={(e) => setValueWats(e.target.value)}
+            maskChar=""
+            placeholder="+7 (928) 321 22 22"
+          />
+        </div>
+        {/* <InputMask
           required
-          className={"input1"}
+          className="input1"
           value={valueWats}
           onChange={(e) => setValueWats(e.target.value)}
           title="Whatsapp"
           disabled={matches}
           name={"whatsapp"}
           placeholder={"+7 (928) 321 22 22"}
-        />
+        /> */}
       </div>
       <div className="contact-checkbox">
         <CheckboxComponent

@@ -22,8 +22,8 @@
   font-style: normal;
   font-weight: 700;
   line-height: 100%;
-  margin-bottom: 24px;
-  margin-top: 38px;
+  margin-bottom: 28px;
+  margin-top: 60px;
 }
 
 .input2 {
@@ -44,7 +44,7 @@
 }
 
 .Contact-Addteacher {
-  margin-top: 32px;
+  margin-top: 60px;
 }
 
 .Add-block {
@@ -61,6 +61,9 @@
 }
 
 .class-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
   width: 100%;
   h4 {
     color: var(--bw-900-b, #000);
@@ -69,11 +72,9 @@
     font-style: normal;
     font-weight: 700;
     line-height: 100%;
-    margin-bottom: 12px;
   }
 
   select {
-    width: 314px;
     outline: none;
     display: flex;
     padding: 12px;
@@ -116,4 +117,54 @@
   font-style: normal;
   font-weight: 700;
   line-height: 100%;
+}
+
+.work-experience-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.place-container {
+  margin-top: 12px;
+}
+
+.place-title-head {
+  color: #000;
+  font-family: Nunito Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.place-container-block {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.merit-container {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  .merit-block{
+    display: flex;
+     gap: 12px;
+  }
+}
+
+.probation-container {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  .probation-block{
+    display: flex;
+    align-items: center;
+  }
 }

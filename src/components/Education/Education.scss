@@ -1,23 +1,52 @@
 .Selected-app-block {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .datePickers-block {
-    display: flex;
-    gap: 12px;
-    text-overflow: ellipsis;
-    margin-top: 24px;
-    margin-bottom: 54px;
+  display: flex;
+  gap: 12px;
+  text-overflow: ellipsis;
+  margin-top: 24px;
+  margin-bottom: 54px;
 }
 
 .select-container {
-    width: 294px;
+  border: none;
+  outline: none;
+  display: flex;
+  padding: 12px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 8px;
+  background: var(--neutral-100, #f9f9f9);
+  width: 294px;
+  color: var(--neutral-400, #5c5c5c);
+  font-family: Nunito Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%;
 }
 
-
-.images-remove{
-    cursor: pointer;
+.images-remove {
+  cursor: pointer;
 }
 
+.selected__title {
+  color: var(--bw-900-b, #000);
+  font-family: Nunito Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.Selected-app {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 12px;
+}

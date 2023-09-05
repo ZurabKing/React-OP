@@ -12,13 +12,8 @@ export default function InputDate({
   title,
 }) {
   return (
-    <div>
-      <div
-        style={{
-          display: "flex",
-          gap: "5px",
-        }}
-      >
+    <div className="data-container-create">
+      <div className="input-container-block">
         <h4 className="date-title">{title}</h4>
         <span>{children}</span>
       </div>

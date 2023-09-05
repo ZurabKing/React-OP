@@ -23,7 +23,7 @@ export function SelectedClass({ classNumber, classLatter }) {
             <h4 className="select-text-checkbox">Классный руководитель</h4>
             <div className="select-checkbox-block">
               <select
-                className="selectClass-container"
+                className="selectClass-container-small"
                 value={selectedOption}
                 name="class"
                 onChange={handleOptionChange}

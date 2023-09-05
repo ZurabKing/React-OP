@@ -8,10 +8,12 @@ export default function TeacherButton({
   color,
   children,
   width,
+  type,
 }) {
   return (
     <div {...containerProps}>
       <button
+        type={type}
         width={width}
         className="teacher-btn"
         onClick={onClick}

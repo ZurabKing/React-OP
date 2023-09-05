@@ -10,18 +10,6 @@ import { Link } from "react-router-dom";
 import loading from "../../assets/img/loader.gif";
 import axios from "axios";
 
-// function fetchWrapper(endpoint, options = {}) {
-//   const { headers, otherOptions } = options;
-
-//   return fetch(`http://data.kod06.ru/api/${endpoint}`, {
-//     headers: {
-//       Authorization: "Bearer 1142|2aqOXJWyWP9T253BEQ3ks7quV8kL2DCb0TWc1Oi4",
-//       ...headers,
-//     },
-//     ...otherOptions,
-//   });
-// }
-
 function fetchTeachers() {
   return axios.get("https://teacher06.ru/api/teachers");
 }
@@ -40,11 +28,9 @@ export default function Table() {
   const [isLoading, setIsLoading] = React.useState(false);
   const { user } = React.useContext(RegistrationContext);
 
-
   React.useEffect(() => {
     setIsLoading(true);
-    fetchTeachers().then(({data}) => {
-      console.log(data)
+    fetchTeachers().then(({ data }) => {
       setTeachers(data);
       setIsLoading(false);
     });
@@ -86,14 +72,10 @@ export default function Table() {
         </table>
       </div>
       <div className="schoolCard-container">
-        <img
-          src={user?.user?.profile_photo_path}
-          className="schoolCard"
-          alt="Avatar"
-        />
+        <img src={user?.target?.photo} className="schoolCard" alt="Avatar" />
         <div className="schoolInfo-block">
-          <h4 className="schoolInfo-title">{user?.user?.nickname}</h4>
-          <span className="schoolInfo-title-span">{user?.user?.city}</span>
+          <h4 className="schoolInfo-title">{user?.target?.shortname}</h4>
+          <span className="schoolInfo-title-span">{user?.target?.address}</span>
           {/* <span className="schoolInfo-title-span">
             Основана в {user?.user?.born} году
           </span> */}
@@ -140,7 +122,7 @@ export default function Table() {
                 strokeLinejoin="round"
               />
             </svg>
-            Добавить учителя
+            Добавить в штат
           </Link>
         </div>
       </div>

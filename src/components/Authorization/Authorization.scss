@@ -252,13 +252,6 @@
   }
 
   .modal {
-    border-radius: 12px;
-    background-color: #fff;
-    overflow: auto;
-    left: 60px;
-    top: 150%;
-    transition: 0.3s linear;
-
     &-body {
       position: relative;
       padding: 60px;

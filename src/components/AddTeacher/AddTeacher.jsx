@@ -1,11 +1,8 @@
 import React, { useRef } from "react";
 import TeacherButton from "../../ui-component/TeacherBtn/TeacherButton";
 import Input from "../../ui-component/Input/Input";
-import { DatePicker } from "../../ui-component/DatePicker/DatePicker";
 import { Collapse } from "../../ui-component/Collapse/Collapse";
 import AddFile from "./AddFile/AddFile";
-import { Selected } from "../../ui-component/Selected/Selected";
-import { SelectedClass } from "../../ui-component/SelectedClass/SelectedClass";
 import Education from "../Education/Education";
 import Experience from "../Experience/Experience";
 import PlusSvg from "../../assets/icons/plus.svg";
@@ -13,20 +10,21 @@ import "./AddTeacher.scss";
 import { Contact } from "../Contact/Contact";
 import { Api } from "../../api";
 import { useNavigate } from "react-router-dom";
-import MultiSelected from "../../ui-component/MultiSelected/MultiSelected";
 import InputDate from "../../ui-component/InputDate/InputDate";
-import { FurtherComponent } from "../../ui-component/Further/Further";
 import SelectGroup from "../../ui-component/SelectGroup/SelectGroup";
 import CheckboxComponent from "../../ui-component/Checkbox/Checkbox";
 import { errorNotification } from "../../utils/errorNotification";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { RegistrationContext } from "../../context";
+import { Place } from "../Place/Place";
 
 export function AddTeacher() {
   const [startDate, setStartDate] = React.useState();
   const [educations, setEducations] = React.useState([1]);
   const [educations1, setEducations1] = React.useState([true]);
-  const [selectedValues, setSelectedValues] = React.useState([]);
+  const [disciplines, setDisciplines] = React.useState([]);
+  const { user, setUser } = React.useContext(RegistrationContext);
 
   const showErrorNotification = () => {
     toast.error("Заполните все обязательные поля.", {
@@ -58,8 +56,6 @@ export function AddTeacher() {
 
   function onRemoveEducation(e, idx) {
     e.preventDefault();
-    console.log(idx);
-    console.log(educations);
     setEducations(educations.filter((item) => item !== idx));
 
     //Запасной вариант, на случай, если Адам скажет, что первый не подходит
@@ -72,8 +68,6 @@ export function AddTeacher() {
     //   })
     // );
   }
-
-  console.log(educations);
 
   function onRemoveExperience(e, idx) {
     e.preventDefault();
@@ -106,16 +100,17 @@ export function AddTeacher() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(formRef.current);
-    selectedValues.forEach((item) => {
-      formData.append("discipline[]", item.value);
+    disciplines.forEach((item) => {
+      formData.append("discipline[]", item);
     });
 
     try {
       await Api.teachers.addTeacher(formData);
+      setUser({ ...user, teachers_count: user.teachers_count + 1 });
       navigate("/teacher");
+      alert("Вы успешно добавили учителя!");
     } catch (error) {
       showErrorNotification();
-
       errorNotification(error);
     }
   };
@@ -198,6 +193,52 @@ export function AddTeacher() {
                   *
                 </span>
               </InputDate>
+            </div>
+          </div>
+          <div className="Contact-Addteacher">
+            <Contact />
+          </div>
+          <div className="place-container-block">
+            <h3 className="place-title-head">Должность</h3>
+            <div className="place-container">
+              <Place
+                disciplines={disciplines}
+                setDisciplines={setDisciplines}
+              />
+            </div>
+          </div>
+
+          <div className="probation-container">
+            <h3 className="place-title-head">Стаж</h3>
+            <div className="probation-block">
+              <Input
+                required
+                className={"input2"}
+                title="Педагогический стаж"
+                placeholder="Введите стаж"
+                name="teacher_experience"
+              />
+              <Input
+                required
+                className={"input2"}
+                title="Стаж в данной должности"
+                placeholder="Введите стаж"
+                name="post_experience"
+              />
+            </div>
+          </div>
+
+          <div className="merit-container">
+            <h3 className="place-title-head">Заслуги</h3>
+            <div className="merit-block">
+              <div className="class-container">
+                <h4 className="">Ученая степень</h4>
+                <select name="degree">
+                  <option value="">Нет</option>
+                  <option value="Первая">Кандидат наук</option>
+                  <option value="Высшая">Доктор наук</option>
+                </select>
+              </div>
               <div className="class-container">
                 <h4 className="">Категория</h4>
                 <select name="skill">
@@ -208,35 +249,33 @@ export function AddTeacher() {
               </div>
             </div>
           </div>
-          <div>
-            <SelectGroup
-              required
-              disciplines={selectedValues}
-              setDisciplines={setSelectedValues}
-            />
-          </div>
-          <div style={{ marginTop: "15px" }} className="class-container">
-            <h4 className="">Ученая степень</h4>
-            <select name="skill">
-              <option value="">Нет</option>
-              <option value="Первая">Кандидат наук</option>
-              <option value="Высшая">Доктор наук</option>
-            </select>
-          </div>
 
           <div className="ranks-container">
             <h4>Звания</h4>
             <div>
               <CheckboxComponent
+                value="Заслуженный учитель Ингушетии"
                 text="Заслуженный учитель Ингушетии"
                 name="ranks[]"
               />
               <CheckboxComponent
+                value="Заслуженный учитель России"
                 text="Заслуженный учитель России"
                 name="ranks[]"
               />
               <CheckboxComponent
+                value="Почетный работник образования"
                 text="Почетный работник образования"
+                name="ranks[]"
+              />
+              <CheckboxComponent
+                value="Отличник народного просвещения"
+                text="Отличник народного просвещения"
+                name="ranks[]"
+              />
+              <CheckboxComponent
+                value="Награжденный Грамотой Министерства образования РФ"
+                text="Награжденный Грамотой Министерства образования РФ"
                 name="ranks[]"
               />
             </div>
@@ -246,24 +285,18 @@ export function AddTeacher() {
             <h3 className="collapse__title-block">Образование</h3>
             <div className="collapse__container">
               {educations.map((education, idx) => (
-                <>
-                  {education && (
-                    <Collapse
-                      isOpen={education}
-                      key={idx}
-                      onToggle={(e) => onChangeEducation(idx)}
-                      title={"Образование " + (idx + 1)}
-                      children={
-                        <Education
-                          onRemoveEducation={(e) =>
-                            onRemoveEducation(e, idx + 1)
-                          }
-                          index={idx}
-                        />
-                      }
+                <Collapse
+                  isOpen={education}
+                  key={idx}
+                  onToggle={(e) => onChangeEducation(idx)}
+                  title={"Образование " + (idx + 1)}
+                  children={
+                    <Education
+                      onRemoveEducation={(e) => onRemoveEducation(e, idx)}
+                      index={idx}
                     />
-                  )}
-                </>
+                  }
+                />
               ))}
             </div>
             <TeacherButton
@@ -301,9 +334,6 @@ export function AddTeacher() {
               Добавить место работы
             </TeacherButton>
           </div>
-        </div>
-        <div className="Contact-Addteacher">
-          <Contact />
         </div>
 
         <div className="Add-block">

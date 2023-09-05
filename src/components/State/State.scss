@@ -1,0 +1,41 @@
+.select__placeholder {
+  color: var(--neutral-400, #5c5c5c);
+  font-family: Nunito Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%;
+  margin-right: 8px;
+}
+
+.no-info-container {
+  position: absolute;
+  top: 49%;
+  left: 44%;
+}
+
+.header-select-btn {
+  margin-bottom: 12px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .schoolInfo__btn {
+    display: flex;
+    padding: 10px 20px 10px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    background: var(--primery-500, #2898ec);
+    color: var(--bw-900-w, #fff);
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}

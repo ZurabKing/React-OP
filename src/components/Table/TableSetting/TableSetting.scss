@@ -1,40 +1,40 @@
 .tableSetting-container {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  padding: 14px;
+  justify-content: space-between;
+  align-items: center;
+  border-top: none;
+  border-bottom: 1px solid var(--neutral-150, #f0f0f0);
+  background: var(--bw-900-w, #fff);
+
+  .setting-arrow {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .tableSetting-title {
+    overflow: hidden;
+    color: var(--bw-900-b, #000);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Noto Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+  }
+
+  .setting-btn {
     display: flex;
-    padding: 14px;
-    justify-content: space-between;
     align-items: center;
-    border-top: 1px solid var(--neutral-150, #f0f0f0);
-    border-bottom: 1px solid var(--neutral-150, #f0f0f0);
-    background: var(--bw-900-w, #fff);
+    gap: 8px;
 
-    .setting-arrow {
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
+    .setting {
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
     }
-
-    .tableSetting-title {
-        overflow: hidden;
-        color: var(--bw-900-b, #000);
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        font-family: Noto Sans;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 100%;
-    }
-
-    .setting-btn {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-
-        .setting {
-            cursor: pointer;
-            border: none;
-            background-color: transparent;
-        }
-    }
+  }
 }

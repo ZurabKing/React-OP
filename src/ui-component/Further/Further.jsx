@@ -5,7 +5,6 @@ import Input from "../Input/Input";
 import Remove from "../../assets/icons/remove.svg";
 import PlusSvg from "../../assets/icons/plus.svg";
 import TeacherButton from "../TeacherBtn/TeacherButton";
-import { style } from "@mui/system";
 
 export function FurtherComponent({ classNumber, classLatter }) {
   const [additionalEducations, setAdditionalEducations] = React.useState([""]);

@@ -10,6 +10,8 @@ import { AddTeacher } from "./components/AddTeacher/AddTeacher.jsx";
 import { Api } from "./api/index.js";
 import { errorNotification } from "./utils/errorNotification.jsx";
 import Settings from "./components/Settings/Settings.jsx";
+import { StatePage } from "./pages/state/state.jsx";
+import State from "./components/State/State.jsx";
 
 function App() {
   const [isAuth, setIsAuth] = React.useState(localStorage.getItem("token"));
@@ -24,6 +26,8 @@ function App() {
       errorNotification(error);
     }
   };
+
+
 
   React.useEffect(() => {
     if (isAuth) {
@@ -43,13 +47,14 @@ function App() {
 
   const Redirect = () => {
     React.useEffect(() => {
-      navigate(routes.teacher);
+      navigate(routes.state);
     }, []);
   };
 
   return (
     <RegistrationContext.Provider value={{ isAuth, setIsAuth, user, setUser }}>
       <Routes>
+
         <Route path={"/"} element={<Redirect />} />
 
         {/* Педагоги */}
@@ -60,7 +65,14 @@ function App() {
           <Route path={routes.profile} element={<ProfileComponent />} />
         </Route>
 
-        <Route path={routes.settings} element={<SettingsPage/>}/>
+        <Route path={routes.settings} element={<SettingsPage />} />
+
+        <Route path={routes.state} element={<StatePage />}>
+          <Route path="" element={<State />} />
+          <Route path={routes.table} element={<State />} />
+          <Route path={routes.add} element={<AddTeacher />} />
+          <Route path={routes.profile} element={<ProfileComponent />} />
+        </Route>
 
         <Route path="*" element={<h1>404</h1>} />
       </Routes>
